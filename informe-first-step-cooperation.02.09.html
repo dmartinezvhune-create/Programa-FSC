@@ -1,0 +1,1424 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>First Step Cooperation — Informe Operativo · Closer Search</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --void:#060606;
+    --void-soft:#0F0F0F;
+    --void-card:#131313;
+    --line:#242220;
+    --gold:#C9A84C;
+    --gold-soft:#C9A96E;
+    --gold-dim:#8E763A;
+    --ink:#EDE7D8;
+    --ink-dim:#B4AC98;
+    --ink-faint:#807A6C;
+    --radius:6px;
+    --maxw:880px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--void);
+    color:var(--ink);
+    font-family:'DM Sans',sans-serif;
+    font-size:16px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{
+    font-family:'Cormorant Garamond',serif;
+    color:var(--ink);
+    margin:0 0 .35em 0;
+    line-height:1.15;
+    font-weight:600;
+  }
+  .cinzel{font-family:'Cinzel',serif;}
+  a{color:var(--gold);}
+
+  .shell{display:flex; min-height:100vh;}
+  nav.sidebar{
+    width:256px; flex:0 0 256px;
+    background:var(--void-soft);
+    border-right:1px solid var(--line);
+    color:#C9C3B4;
+    position:sticky; top:0; height:100vh;
+    overflow-y:auto;
+    padding:32px 22px 40px;
+  }
+  .brandmark{display:flex; align-items:center; gap:12px; margin-bottom:6px;}
+  .brandmark svg{width:36px; height:36px; flex:0 0 auto;}
+  .brand-name{font-family:'Cinzel',serif; font-weight:600; font-size:.98rem; color:#fff; letter-spacing:.06em;}
+  .brand-name .search{color:var(--gold);}
+  .brand-tagline{
+    font-size:.65rem; letter-spacing:.16em; text-transform:uppercase;
+    color:var(--gold-dim); margin:2px 0 6px 48px;
+  }
+  .brand-client{
+    font-size:.72rem; margin:0 0 24px 48px; color:var(--ink-faint);
+  }
+  .brand-client strong{color:var(--gold-soft);}
+  nav.sidebar .nav-group-label{
+    font-size:.66rem; text-transform:uppercase; letter-spacing:.12em;
+    color:var(--ink-faint); margin:22px 0 8px;
+  }
+  nav.sidebar a{
+    display:block; color:#B4AC98; text-decoration:none;
+    font-size:.87rem; padding:6px 0 6px 12px; border-left:2px solid transparent;
+    transition:.15s;
+  }
+  nav.sidebar a:hover{color:var(--gold-soft); border-left-color:var(--gold);}
+  nav.sidebar a.sourced{color:var(--ink); font-weight:400;}
+  nav.sidebar a.sourced:hover{color:var(--gold-soft);}
+  nav.sidebar .quicklinks{margin-top:28px; padding-top:18px; border-top:1px solid var(--line);}
+  nav.sidebar .quicklinks a{
+    background:rgba(201,168,76,.08); border-radius:4px; margin-bottom:6px;
+    padding:9px 10px 9px 12px; border-left:2px solid var(--gold); font-size:.81rem; color:var(--gold-soft);
+  }
+
+  main{flex:1; min-width:0;}
+
+  .topbar{
+    background:var(--void-card); color:var(--ink-dim);
+    padding:14px 44px; display:flex; gap:26px; flex-wrap:wrap;
+    align-items:center; font-size:.82rem;
+    border-bottom:1px solid var(--gold-dim);
+  }
+  .topbar strong{color:var(--gold); font-weight:600;}
+  .topbar .divider{width:1px; height:14px; background:var(--line);}
+
+  .hero{
+    padding:64px 44px 46px;
+    background:
+      radial-gradient(ellipse at 88% -10%, rgba(201,168,76,.10), transparent 55%),
+      var(--void);
+    border-bottom:1px solid var(--line);
+  }
+  .hero .eyebrow{
+    font-size:.72rem; letter-spacing:.18em; text-transform:uppercase;
+    color:var(--gold); font-weight:600; margin-bottom:16px;
+    display:flex; align-items:center; gap:10px;
+    font-family:'Cinzel',serif;
+  }
+  .hero h1{font-size:2.7rem; max-width:760px; font-weight:600; color:#fff;}
+  .hero .lede{max-width:660px; font-size:1.06rem; color:var(--ink-dim); margin-top:16px;}
+  .hero .promise{
+    margin-top:26px; padding:20px 24px; background:var(--void-card);
+    border-left:2px solid var(--gold); border-radius:0 6px 6px 0;
+    max-width:660px; font-family:'Cormorant Garamond',serif; font-size:1.25rem;
+    font-weight:600; font-style:italic; color:var(--gold-soft);
+  }
+
+  section{padding:52px 44px; max-width:var(--maxw); margin:0 auto; border-bottom:1px solid var(--line);}
+  section:last-of-type{border-bottom:none;}
+  .section-tag{
+    font-size:.7rem; letter-spacing:.16em; text-transform:uppercase;
+    color:var(--gold-dim); font-weight:600; margin-bottom:8px; font-family:'Cinzel',serif;
+  }
+  section h2{font-size:1.75rem; margin-bottom:.3em; color:#fff;}
+  section h3{font-size:1.18rem; margin-top:28px; color:var(--gold-soft); font-weight:600;}
+  section p{color:var(--ink-dim); max-width:70ch;}
+  .subnote{color:var(--ink-faint); font-size:.88rem;}
+
+  .seal-divider{
+    display:flex; align-items:center; gap:14px; margin:0 44px;
+    max-width:var(--maxw); margin-left:auto; margin-right:auto;
+  }
+  .seal-divider .line{flex:1; height:1px; background:linear-gradient(90deg,var(--line),transparent);}
+  .seal-divider .line.right{background:linear-gradient(90deg,transparent,var(--line));}
+  .seal-divider svg{width:22px; height:22px;}
+
+  .grid-2{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:18px;}
+  .grid-3{display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:18px;}
+  .grid-4{display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-top:18px;}
+  .card{
+    background:var(--void-card); border:1px solid var(--line);
+    border-radius:var(--radius); padding:18px 20px;
+  }
+  .card h4{font-size:1.02rem; margin-bottom:6px; color:var(--ink);}
+  .card p{margin:0; font-size:.9rem; color:var(--ink-dim);}
+  .pill{
+    display:inline-block; font-size:.68rem; font-weight:600; letter-spacing:.06em; text-transform:uppercase;
+    padding:3px 10px; border-radius:2px; background:rgba(201,168,76,.1); color:var(--gold);
+    margin-bottom:8px; border:1px solid var(--gold-dim); font-family:'Cinzel',serif;
+  }
+
+  table{width:100%; border-collapse:collapse; margin-top:18px; font-size:.9rem; background:var(--void-card); border-radius:var(--radius); overflow:hidden;}
+  thead th{
+    background:#000; color:var(--gold); text-align:left; padding:11px 14px;
+    font-size:.72rem; text-transform:uppercase; letter-spacing:.08em; font-weight:600; font-family:'Cinzel',serif;
+    border-bottom:1px solid var(--gold-dim);
+  }
+  tbody td{padding:11px 14px; border-bottom:1px solid var(--line); vertical-align:top; color:var(--ink-dim);}
+  tbody tr:last-child td{border-bottom:none;}
+  tbody tr:nth-child(even){background:rgba(255,255,255,.015);}
+  td.label{font-weight:600; color:var(--ink); white-space:nowrap;}
+
+  .phase{display:grid; grid-template-columns:44px 1fr; gap:18px; margin-top:22px;}
+  .phase .num{
+    width:44px; height:44px; border-radius:50%; background:#000; border:1px solid var(--gold-dim);
+    color:var(--gold); display:flex; align-items:center; justify-content:center;
+    font-family:'Cinzel',serif; font-weight:600; font-size:.98rem;
+  }
+  .phase .num.active{background:var(--gold); color:#060606; border-color:var(--gold);}
+  .phase-body{padding-bottom:8px; border-left:1px solid var(--line); padding-left:18px; margin-left:22px; margin-top:-40px; padding-top:44px;}
+  .phase-body h4{margin-bottom:4px; font-size:1.05rem; color:var(--ink);}
+  .phase-body .result{
+    margin-top:8px; font-size:.85rem; background:rgba(201,168,76,.08); color:var(--gold-soft);
+    padding:8px 12px; border-radius:4px; display:inline-block; border:1px solid var(--gold-dim);
+  }
+
+  details.acc{
+    background:var(--void-card); border:1px solid var(--line); border-radius:var(--radius);
+    margin-top:10px; overflow:hidden;
+  }
+  details.acc summary{
+    cursor:pointer; list-style:none; padding:14px 18px; font-weight:600; color:var(--ink);
+    display:flex; justify-content:space-between; align-items:center; font-size:.95rem;
+  }
+  details.acc summary::-webkit-details-marker{display:none;}
+  details.acc summary::after{content:'+'; font-family:'Cormorant Garamond',serif; font-size:1.4rem; color:var(--gold); flex:0 0 auto;}
+  details.acc[open] summary::after{content:'–';}
+  details.acc[open] summary{border-bottom:1px solid var(--line);}
+  details.acc .acc-body{padding:14px 18px 18px; font-size:.9rem; color:var(--ink-dim);}
+  details.acc .acc-body p{margin:.5em 0;}
+  details.acc .acc-body .say{
+    background:rgba(201,168,76,.06); border-left:2px solid var(--gold); padding:10px 14px;
+    border-radius:0 4px 4px 0; margin:8px 0; font-style:italic; color:var(--ink);
+  }
+
+  .paybox{background:#000; border:1px solid var(--gold-dim); border-radius:8px; padding:28px 30px; margin-top:22px;}
+  .paybox h3{color:var(--gold); margin-top:0; font-family:'Cinzel',serif; font-size:1.1rem; letter-spacing:.03em;}
+  .pay-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:16px;}
+  .pay-card{background:var(--void-card); border:1px solid var(--line); border-radius:6px; padding:16px;}
+  .pay-card .plan{font-weight:600; font-size:.9rem; color:var(--ink); margin-bottom:2px;}
+  .pay-card .amount{font-family:'Cormorant Garamond',serif; font-weight:700; color:var(--gold); font-size:1.35rem; margin-bottom:6px;}
+  .pay-card .detail{font-size:.78rem; color:var(--ink-dim);}
+
+  .dodont{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:18px;}
+  .dodont .box{border-radius:var(--radius); padding:16px 18px; border:1px solid var(--line);}
+  .dodont .do{background:rgba(201,168,76,.05);}
+  .dodont .dont{background:rgba(150,40,30,.08); border-color:#4A2A24;}
+  .dodont h4{margin-bottom:8px; font-size:.85rem; text-transform:uppercase; letter-spacing:.06em; font-family:'Cinzel',serif;}
+  .dodont .do h4{color:var(--gold-soft);}
+  .dodont .dont h4{color:#D08370;}
+  .dodont ul{margin:0; padding-left:18px; font-size:.87rem; color:var(--ink-dim);}
+  .dodont li{margin-bottom:5px;}
+
+  .callout{
+    background:rgba(201,168,76,.07); border:1px solid var(--gold-dim); border-radius:var(--radius);
+    padding:16px 20px; margin-top:18px; font-size:.9rem; color:var(--ink-dim);
+  }
+  .callout strong{color:var(--gold);}
+
+  footer{
+    padding:34px 44px 60px; max-width:var(--maxw); margin:0 auto;
+    color:var(--ink-faint); font-size:.8rem; display:flex; align-items:center; gap:10px;
+  }
+  footer svg{width:18px; height:18px; opacity:.6;}
+
+  .checklist{list-style:none; padding:0; margin-top:16px;}
+  .checklist li{
+    display:flex; gap:10px; align-items:flex-start; padding:7px 0; font-size:.9rem; color:var(--ink-dim);
+    border-bottom:1px dashed var(--line);
+  }
+  .checklist li:last-child{border-bottom:none;}
+  .checklist .box{flex:0 0 15px; width:15px; height:15px; border:1px solid var(--gold-dim); border-radius:2px; margin-top:2px;}
+
+  @media (max-width:900px){
+    .shell{flex-direction:column;}
+    nav.sidebar{position:relative; width:100%; height:auto; flex:none;}
+    .grid-2, .grid-3, .grid-4, .pay-grid, .dodont{grid-template-columns:1fr;}
+    .hero, section, .topbar, footer{padding-left:22px; padding-right:22px;}
+    .seal-divider{margin-left:22px; margin-right:22px;}
+    .hero h1{font-size:2.1rem;}
+  }
+</style>
+</head>
+<body>
+<div class="shell">
+
+  <nav class="sidebar">
+    <div class="brandmark">
+      <svg viewBox="0 0 100 100" fill="none">
+        <polygon points="50,4 90,26 90,74 50,96 10,74 10,26" stroke="#C9A84C" stroke-width="3" fill="#060606"/>
+        <polygon points="50,16 79,32 79,68 50,84 21,68 21,32" stroke="#8E763A" stroke-width="1.2" fill="none"/>
+        <path d="M33 50 L45 62 L69 36" stroke="#C9A84C" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <div>
+        <div class="brand-name">CLOSER<span class="search"> SEARCH</span></div>
+      </div>
+    </div>
+    <div class="brand-tagline">Selección de talento de cierre</div>
+    <div class="brand-client">Cliente: <strong>First Step Cooperation</strong></div>
+
+    <div class="nav-group-label">El programa</div>
+    <a href="#resumen">Resumen ejecutivo</a>
+    <a href="#avatar">Avatar del cliente</a>
+    <a href="#dolores">Dolores y problema principal</a>
+    <a class="sourced" href="#angulos">Ángulos ganadores de comunicación</a>
+    <a href="#competencia">Análisis de competencia</a>
+    <a href="#oferta">Oferta: el programa y los 2 pilares</a>
+    <a href="#fases">Fases del programa</a>
+    <a href="#incluye">Qué incluye y bonus</a>
+    <a class="sourced" href="#modulos">Contenido por módulo</a>
+    <a class="sourced" href="#prueba-social">Prueba social y autoridad</a>
+
+    <div class="nav-group-label">Venta</div>
+    <a class="sourced" href="#embudo">Embudo de conversión</a>
+    <a href="#checklist">Checklist de encaje profesional</a>
+    <a href="#carreras">Qué carreras tienen cabida</a>
+    <a class="sourced" href="#webinar">Guion del webinar</a>
+    <a class="sourced" href="#prellamada-setter">Guion de prellamada (Setter)</a>
+    <a class="sourced" href="#cualificacion-setter">Cualificación del lead (Setter)</a>
+    <a class="sourced" href="#guiones-setter-chat">Guiones de setter por chat</a>
+    <a class="sourced" href="#conversacion">Conversación de cierre por WhatsApp</a>
+    <a class="sourced" href="#guion-venta-closer">Guion completo de llamada (Closer)</a>
+    <a class="sourced" href="#objeciones">Manejo de creencias y objeciones</a>
+    <a class="sourced" href="#limites">Límites y qué no prometer</a>
+
+    <div class="nav-group-label">Operativa</div>
+    <a class="sourced" href="#inversion">Inversión y métodos de pago</a>
+    <a class="sourced" href="#proceso-closer">Procedimiento del Closer</a>
+    <a class="sourced" href="#equipo-horarios">Equipo y horario de cobertura</a>
+    <a class="sourced" href="#reparto-leads">Reparto y seguimiento de leads</a>
+    <a class="sourced" href="#recursos">Recursos y enlaces</a>
+
+    <div class="quicklinks">
+      <a href="#conversacion">Guion de WhatsApp</a>
+      <a href="#guion-venta-closer">Guion de llamada (Closer)</a>
+      <a href="#objeciones">Creencias limitantes</a>
+      <a href="#inversion">Enlaces de pago</a>
+    </div>
+  </nav>
+
+  <main>
+    <div class="topbar">
+      <span><strong>Cliente</strong> First Step Cooperation</span>
+      <span class="divider"></span>
+      <span>Programa FSC, 847€, 5 meses de acceso real</span>
+      <span class="divider"></span>
+      <span>Fundadores: Ana Martín y Michael Sainvil</span>
+    </div>
+
+    <div class="hero">
+      <div class="eyebrow">
+        <svg viewBox="0 0 100 100" fill="none" width="16" height="16"><polygon points="50,4 90,26 90,74 50,96 10,74 10,26" stroke="#C9A84C" stroke-width="6" fill="none"/></svg>
+        Informe operativo · Closer Search
+      </div>
+      <h1>First Step Cooperation</h1>
+      <p class="lede">Tu ruta estratégica para acceder, crecer y generar impacto en el sector humanitario. Guía operativa para el equipo de closers sobre el Programa FSC, con el embudo que va del webinar a la conversación de cierre por WhatsApp.</p>
+      <div class="promise">"No es falta de valor. Es falta de dirección estratégica."</div>
+    </div>
+
+    <section id="resumen">
+      <div class="section-tag">00 · Resumen</div>
+      <h2>Resumen ejecutivo</h2>
+      <p>Cuatro ideas para tener claras antes de trabajar esta cuenta.</p>
+
+      <div class="phase">
+        <div class="num active">1</div>
+        <div class="phase-body">
+          <h4>Un programa de acompañamiento de 5 meses de acceso real</h4>
+          <p>El Programa FSC cuesta 847€ (IVA incluido) y cubre 4 meses de programa (2 formativos + 2 de acompañamiento en candidaturas), con un mes 5 de regalo incluido sin coste adicional. Valor real combinado de más de 3.650€ si se contratasen los servicios por separado. Próximas ediciones subirán de precio de forma natural, a un rango estimado de 1.200€ a 2.000€.</p>
+        </div>
+      </div>
+      <div class="phase">
+        <div class="num active">2</div>
+        <div class="phase-body">
+          <h4>El problema del cliente ya está identificado y priorizado</h4>
+          <p>De seis problemas analizados, el ganador es claro: no consiguen su primer contrato porque no saben cómo posicionarse ni cómo funciona el sector desde dentro.</p>
+        </div>
+      </div>
+      <div class="phase">
+        <div class="num active">3</div>
+        <div class="phase-body">
+          <h4>El embudo ya existe y funciona en dos pasos</h4>
+          <p>Un webinar de conversión rápida presenta el problema y la solución, y termina invitando a una conversación por WhatsApp sin compromiso, con una guía gratuita como incentivo.</p>
+        </div>
+      </div>
+      <div class="phase">
+        <div class="num active">4</div>
+        <div class="phase-body">
+          <h4>La autoridad de los fundadores es el activo central</h4>
+          <p>Ana Martín (más de 10 años en cooperación internacional) y Michael Sainvil (más de 15 años en selección de personal humanitario, más de 800 procesos liderados) son la base de la credibilidad del programa.</p>
+        </div>
+      </div>
+      <div class="callout"><strong>Precio y duración únicos y vigentes en todo este informe: 847€ — 4 meses de programa + 1 mes de regalo (5 meses de acceso real).</strong> Los guiones de venta más antiguos que circulaban con cifras de 497€ y 2 meses, o que hablaban solo de "4 meses" sin el mes de regalo, ya han sido corregidos en este documento. Si el equipo encuentra en cualquier otro material (fuera de este informe) la cifra antigua, debe tratarse como obsoleta.</div>
+    </section>
+
+    <div class="seal-divider"><span class="line"></span>
+      <svg viewBox="0 0 100 100" fill="none"><polygon points="50,4 90,26 90,74 50,96 10,74 10,26" stroke="#8E763A" stroke-width="4" fill="none"/><path d="M33 50 L45 62 L69 36" stroke="#8E763A" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <span class="line right"></span></div>
+
+    <section id="avatar">
+      <div class="section-tag">01 · Cliente ideal</div>
+      <h2>Avatar del cliente</h2>
+      <p>El rango real de clientes es más amplio de lo que un único avatar puede capturar: hay dos sub-perfiles claramente distintos bajo el mismo programa.</p>
+      <table>
+        <thead><tr><th>Variable</th><th>Detalle</th></tr></thead>
+        <tbody>
+          <tr><td class="label">Edad</td><td>De 23 a 60+ años</td></tr>
+          <tr><td class="label">Sub-perfil A, primer acceso</td><td>23 a 38 años, formación académica y al menos 4 años de experiencia profesional en cualquier sector, sin conseguir su primer contrato o entrevista en cooperación</td></tr>
+          <tr><td class="label">Sub-perfil B, reconversión profesional</td><td>Perfiles más senior, incluso 55 a 60+ años, con una carrera larga en otro sector y motivación de dar un giro profesional, no de encontrar su primer empleo</td></tr>
+          <tr><td class="label">Estado emocional</td><td>Miedo, desconocimiento e inseguridad sobre si están preparados; sensación de estar solos, sin apoyo ni feedback real</td></tr>
+          <tr><td class="label">Creencia a romper</td><td>Piensan que la cooperación internacional solo ofrece voluntariado o trabajos mal pagados, cuando existe un mercado profesional con buenos salarios y estabilidad</td></tr>
+          <tr><td class="label">Perfil válido para el programa</td><td>Comprometidos con su transición, dispuestos a implementar un enfoque estratégico y dejar de improvisar</td></tr>
+          <tr><td class="label">Perfil descartado</td><td>Personas que buscan una solución mágica sin comprometerse, o que prefieren acumular más títulos en lugar de tomar acción estratégica</td></tr>
+        </tbody>
+      </table>
+      <div class="callout"><strong>Importante para la cualificación:</strong> el discurso no es el mismo para los dos sub-perfiles. Al sub-perfil A se le habla de conseguir su primer contrato. Al sub-perfil B se le habla de reconversión, aprovechando su experiencia previa. Además, los profesionales ya dentro del sector humanitario que buscan un giro interno no encajan en el programa general: deben derivarse directamente a Ana Martín, que puede ofrecerles un servicio más personalizado y concreto fuera de este programa.</div>
+    </section>
+
+    <section id="dolores">
+      <div class="section-tag">02 · Psicografía</div>
+      <h2>Dolores y problema principal</h2>
+      <p>Seis problemas identificados y priorizados según frecuencia, nivel de frustración y disposición a pagar.</p>
+      <table>
+        <thead><tr><th>Problema</th><th>Frecuencia</th><th>Frustración</th><th>Disposición a pagar</th><th>Total</th></tr></thead>
+        <tbody>
+          <tr><td class="label">No saben por dónde empezar ni tienen plan estratégico</td><td>5</td><td>4</td><td>4</td><td>13</td></tr>
+          <tr><td class="label">Formación académica pero sin primer contrato o entrevista</td><td>5</td><td>5</td><td>5</td><td>15</td></tr>
+          <tr><td class="label">No saben qué roles encajan con su perfil</td><td>4</td><td>4</td><td>4</td><td>12</td></tr>
+          <tr><td class="label">Miedo e inseguridad sobre si están preparados</td><td>3</td><td>4</td><td>3</td><td>10</td></tr>
+          <tr><td class="label">Visión distorsionada del sector (solo voluntariado o mal pagado)</td><td>4</td><td>4</td><td>4</td><td>12</td></tr>
+          <tr><td class="label">Falta de confianza y criterio, sensación de estar solo</td><td>5</td><td>4</td><td>4</td><td>13</td></tr>
+        </tbody>
+      </table>
+      <div class="callout"><strong>Problema principal ganador:</strong> no consiguen su primer contrato porque no saben cómo posicionarse ni cómo funciona el sector desde dentro.</div>
+    </section>
+
+    <div class="seal-divider"><span class="line"></span>
+      <svg viewBox="0 0 100 100" fill="none"><polygon points="50,4 90,26 90,74 50,96 10,74 10,26" stroke="#8E763A" stroke-width="4" fill="none"/><path d="M33 50 L45 62 L69 36" stroke="#8E763A" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <span class="line right"></span></div>
+
+    <section id="angulos">
+      <div class="section-tag">02b · Mensaje</div>
+      <h2>Ángulos ganadores de comunicación</h2>
+      <p>Reencuadre fundamental de la estrategia: el problema del aspirante no es la falta de valía ni de títulos, sino la desconexión entre cómo comunica su perfil y el código interno con el que el sector humanitario selecciona talento. Seis ángulos distintos, cada uno ligado a uno o ambos pilares del programa, pensados para fases concretas del funnel.</p>
+      <table>
+        <thead><tr><th>Nº</th><th>Ángulo</th><th>Enfoque</th><th>Pilar</th><th>Promesa central</th><th>Fase del funnel</th></tr></thead>
+        <tbody>
+          <tr><td class="label">1</td><td>Traducción interna: "No te falta formación, te falta traducción"</td><td>Contracultural / Autoridad</td><td>Ambos</td><td>Dejar de ser invisible para RRHH sin más títulos</td><td>Consideración</td></tr>
+          <tr><td class="label">2</td><td>Llegas tarde: "Aplicar a ofertas publicadas es llegar tarde al partido"</td><td>Revelación / Curiosidad</td><td>Pilar 2</td><td>Entrevistas accediendo al mercado oculto</td><td>Consideración / Decisión</td></tr>
+          <tr><td class="label">3</td><td>Perfil defendible: "De aspirante eterno a contratado"</td><td>Identitario / Sistema</td><td>Pilar 1</td><td>Defender la candidatura con criterio, primeras entrevistas en 8 semanas</td><td>Decisión</td></tr>
+          <tr><td class="label">4</td><td>Sin quemarte: "Entrar sin quemarte ni perder años" (anti-ensayo-error)</td><td>Emocional / Protección</td><td>Ambos</td><td>Entrar de forma estructurada, sin improvisar 2-3 años</td><td>Decisión (cierre, objeción de precio)</td></tr>
+          <tr><td class="label">5</td><td>Sí paga bien: "El sector SÍ paga bien y nadie te lo cuenta"</td><td>Disruptivo / Educadora</td><td>Ambos</td><td>Carrera con impacto y sueldos de 40.000€ a 80.000€ o más</td><td>Awareness / tráfico frío</td></tr>
+          <tr><td class="label">6</td><td>Mercado oculto: "El mercado oculto del empleo humanitario"</td><td>Curiosidad / Evidencia</td><td>Pilar 2</td><td>Acceder a puestos donde la competencia es mínima</td><td>Awareness / nurture</td></tr>
+        </tbody>
+      </table>
+      <h3>Secuencia estratégica de ejecución</h3>
+      <div class="phase">
+        <div class="num active">1</div>
+        <div class="phase-body"><h4>Lanzamiento y conversión directa, semanas 1 y 2</h4><p>Webinar principal: primera mitad con el Ángulo 1 (Traducción) y segunda mitad con el Ángulo 2 (Mercado oculto). Cierre de ventas con el Ángulo 3 (sistema en 8 semanas) más el Ángulo 4 (coste de oportunidad de seguir improvisando). En llamadas 1:1, la objeción "es caro" se maneja reencuadrando con el Ángulo 4.</p></div>
+      </div>
+      <div class="phase">
+        <div class="num active">2</div>
+        <div class="phase-body"><h4>Captación orgánica y viralidad, meses 1 y 2</h4><p>Reels y vídeos cortos con el Ángulo 5 ("3 mitos sobre los sueldos en cooperación"). Lead magnet de guía descargable de rangos salariales reales. Contenido de LinkedIn sobre el mercado oculto y los filtros de RRHH (Ángulos 6 y 2).</p></div>
+      </div>
+      <div class="phase">
+        <div class="num active">3</div>
+        <div class="phase-body"><h4>Retargeting y casos de éxito, meses 2 y 3</h4><p>Anuncios de retargeting apoyados en historias de éxito bajo los Ángulos 1 y 2. Ejemplo de testimonio: Laura tenía máster pero no la llamaban; tras aplicar la traducción interna, logró su primera entrevista en 3 semanas. Secuencias de email de nurture orientadas a derribar la creencia de necesitar más títulos.</p></div>
+      </div>
+    </section>
+
+    <div class="seal-divider"><span class="line"></span>
+      <svg viewBox="0 0 100 100" fill="none"><polygon points="50,4 90,26 90,74 50,96 10,74 10,26" stroke="#8E763A" stroke-width="4" fill="none"/><path d="M33 50 L45 62 L69 36" stroke="#8E763A" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <span class="line right"></span></div>
+
+    <section id="competencia">
+      <div class="section-tag">02c · Mercado</div>
+      <h2>Análisis de competencia</h2>
+      <p>Cinco tipos de alternativas que un candidato puede considerar antes de llegar al Programa FSC, con su enfoque de precio y el punto débil que el programa cubre.</p>
+      <table>
+        <thead><tr><th>Competidor</th><th>Método</th><th>Precio</th><th>Punto débil</th></tr></thead>
+        <tbody>
+          <tr><td class="label">Másteres y posgrados universitarios (UNIR, Comillas, UGR, UIC, IECS y similares)</td><td>Formación académica reglada</td><td>3.000€ – 10.000€</td><td>Muy teóricos, caros, poco enfoque en estrategias prácticas de carrera y empleo real; a menudo sin acompañamiento personalizado</td></tr>
+          <tr><td class="label">Cursos online generalistas (Asoc PROADE, plataformas universitarias, Manos Unidas, CRE)</td><td>Vídeos grabados</td><td>150€ – 500€</td><td>Contenido superficial, no preparan para selecciones reales ni el proceso competitivo</td></tr>
+          <tr><td class="label">Blogs y YouTubers de cooperantes (Humanitarian Tube, Aid Worker Help, The Humanitarian Story, entre otros)</td><td>Contenido gratuito, experiencias personales</td><td>Gratis</td><td>Inspiracional pero sin estructura formativa ni preparación para procesos de selección</td></tr>
+          <tr><td class="label">Agencias de voluntariado internacional (Cooperating Volunteers, WorldTeach)</td><td>Voluntariado internacional</td><td>El usuario suele pagar</td><td>No conduce necesariamente a empleo profesional; refuerza el mito de que cooperación es igual a voluntariado</td></tr>
+          <tr><td class="label">Coaching laboral (Humanitarian Career Consulting, Imarah Consultancy, Impact Pool, Cinfo.ch)</td><td>Sesiones individuales de CV y entrevistas</td><td>300€ – 1.000€</td><td>Generalista, no específico al sector humanitario ni centrado en perfiles junior sin experiencia</td></tr>
+        </tbody>
+      </table>
+      <div class="callout"><strong>Ventaja competitiva del Programa FSC:</strong> ninguna alternativa combina experiencia real en gestión de programas complejos, visión sistémica del sector desde dentro (RRHH, logística, finanzas, selección) y aplicación pedagógica a perfiles junior o en transición. El programa no compite en "enseñar cooperación", sino en acortar la curva de entrada al sector evitando años de ensayo y error.</div>
+    </section>
+
+    <div class="seal-divider"><span class="line"></span>
+      <svg viewBox="0 0 100 100" fill="none"><polygon points="50,4 90,26 90,74 50,96 10,74 10,26" stroke="#8E763A" stroke-width="4" fill="none"/><path d="M33 50 L45 62 L69 36" stroke="#8E763A" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <span class="line right"></span></div>
+
+    <section id="oferta">
+      <div class="section-tag">03 · Producto</div>
+      <h2>Oferta: el programa y los 2 pilares</h2>
+      <table>
+        <thead><tr><th>Variable</th><th>Detalle</th></tr></thead>
+        <tbody>
+          <tr><td class="label">Duración total</td><td>5 meses de acceso real: 2 meses de programa formativo + 2 meses de acompañamiento en candidaturas + 1 mes de regalo incluido sin coste adicional</td></tr>
+          <tr><td class="label">Precio de lanzamiento</td><td>847€, IVA incluido — cubre los 4 meses de programa; el mes 5 es un regalo</td></tr>
+          <tr><td class="label">Valor real combinado</td><td>Más de 3.650€ si se contratasen los servicios por separado</td></tr>
+        </tbody>
+      </table>
+      <h3>Pilar 1, Alineación Profesional Humanitaria</h3>
+      <p>Sistema propio que permite identificar con precisión qué aporta el participante al sector y cómo traducir ese valor en una candidatura competitiva. Parte del análisis del perfil actual (formación, experiencia, competencias transferibles) y lo alinea con los criterios reales de contratación, incluyendo CV, carta de presentación y perfil de LinkedIn adaptados al sector.</p>
+      <h3>Pilar 2, Networking Operativo Estratégico del Sector Humanitario</h3>
+      <p>Traslada al participante los fundamentos prácticos del trabajo en terreno, incluso si aún no ha pisado uno. Se trabaja con casos reales, dilemas operativos y errores frecuentes del personal junior, preparando al participante para demostrar criterio profesional desde el primer contacto con las organizaciones.</p>
+    </section>
+
+    <section id="fases">
+      <div class="section-tag">04 · Programa</div>
+      <h2>Fases del programa</h2>
+      <div class="phase">
+        <div class="num active">1</div>
+        <div class="phase-body">
+          <h4>Sesión 1, individual: Onboarding y Diagnóstico Estratégico</h4>
+          <p>Sesión 1 a 1 de 45 a 60 minutos. Análisis del perfil completo, contexto vital y definición de roles realistas y ruta principal.</p>
+          <span class="result">Entregables: Análisis Estratégico Personalizado, Plan de Acción de 14 días, Mapa de organizaciones personalizado</span>
+        </div>
+      </div>
+      <div class="phase">
+        <div class="num active">2</div>
+        <div class="phase-body">
+          <h4>Fase 2, formativa: 6 módulos</h4>
+          <p>Sesiones formativas grupales que cubren cómo aplicar con criterio, CV y LinkedIn, networking operativo, la realidad del terreno, simulación de entrevistas y el mapa del sector como bonus. Ver el detalle completo en <a href="#modulos">Contenido del programa por módulo</a>.</p>
+          <span class="result">En paralelo: soporte continuo por Telegram (Humanitarian Circle) y 2 sesiones grupales semanales de dudas y acompañamiento, ambas como bonus</span>
+        </div>
+      </div>
+      <div class="phase">
+        <div class="num active">3</div>
+        <div class="phase-body">
+          <h4>Fase 3, Acompañamiento en Candidaturas Reales, meses 3 y 4</h4>
+          <p>2 meses suplementarios de feedback continuo oferta a oferta. El alumno aplica a una oferta real, comparte la convocatoria y su candidatura por el canal privado, y recibe feedback experto personalizado antes de la siguiente convocatoria.</p>
+          <span class="result">Alcance garantizado: hasta 8 candidaturas revisadas por alumno. Candidaturas adicionales se revisan si el perfil cumple entre un 60% y un 70% de los requisitos de la oferta</span>
+        </div>
+      </div>
+      <div class="phase">
+        <div class="num active">4</div>
+        <div class="phase-body">
+          <h4>Mes de regalo, mes 5, incluido sin coste adicional</h4>
+          <p>Mismo formato de acompañamiento que la Fase 3 (feedback continuo oferta a oferta), extendido un mes más para todos los alumnos, sin condición de pago único ni coste extra.</p>
+        </div>
+      </div>
+      <p class="subnote">Decidido: punto ya cerrado. Se descarta la opción de condicionar el mes adicional al pago único — se regala a todos los alumnos por igual, como quinto mes de acceso real.</p>
+    </section>
+
+    <section id="incluye">
+      <div class="section-tag">05 · Entrega</div>
+      <h2>Qué incluye y bonus</h2>
+      <table>
+        <thead><tr><th>Elemento</th><th>Descripción</th></tr></thead>
+        <tbody>
+          <tr><td class="label">Canal Telegram privado, Humanitarian Circle</td><td>Soporte asíncrono continuo durante los 5 meses completos de acceso (4 de programa + 1 de regalo)</td></tr>
+          <tr><td class="label">Sesiones grupales de preguntas y respuestas semanales</td><td>Espacio en vivo semanal para resolver bloqueos y ajustar la estrategia</td></tr>
+          <tr><td class="label">Masterclass bonus, Mapa del Sector Humanitario</td><td>Sesión grupal en vivo sobre actores, rutas de entrada, perfiles buscados y realidades laborales del sector</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="modulos">
+      <div class="section-tag">05b · Contenido confidencial</div>
+      <h2>Contenido del programa por módulo</h2>
+      <p class="subnote">Índice de referencia interna a partir del material formativo confidencial del programa (no compartir con candidatos ni fuera del equipo). Sirve para que el closer sepa qué cubre cada sesión si un candidato pregunta por el detalle del contenido, sin necesidad de leer el material completo.</p>
+      <table>
+        <thead><tr><th>Módulo</th><th>Título</th><th>Qué cubre</th></tr></thead>
+        <tbody>
+          <tr><td class="label">1</td><td>Cómo aplicar inteligentemente</td><td>Sistema para priorizar ofertas, leer una oferta humanitaria en profundidad, adaptar la candidatura con criterio sectorial y evitar los errores más críticos al aplicar, sin desgastarse.</td></tr>
+          <tr><td class="label">2</td><td>CV, Cover Letter y LinkedIn</td><td>Cómo piensan realmente los reclutadores humanitarios, construcción de materiales que hablan el lenguaje del sector, narrativa coherente entre CV, carta y LinkedIn, y errores que descalifican candidaturas sin que el candidato lo sepa.</td></tr>
+          <tr><td class="label">3</td><td>Networking Operativo Estratégico</td><td>LinkedIn humanitario, cómo preparar y aprovechar eventos, cómo iniciar conversaciones reales sin pedir trabajo, seguimiento post-contacto y acceso al mercado oculto de vacantes.</td></tr>
+          <tr><td class="label">4</td><td>La realidad del terreno que nadie te cuenta</td><td>Ecosistema real de actores y poder, vida real en misión (antes, durante y después), dilemas operativos sin respuesta perfecta y los errores que terminan carreras, con casuística real.</td></tr>
+          <tr><td class="label">5</td><td>Simulación semanal de entrevistas</td><td>Qué se evalúa realmente en una entrevista del sector, método STAR, simulación en vivo con feedback estructurado y plan de acción para las siguientes entrevistas reales. Cada semana se seleccionan dos perfiles para el role play.</td></tr>
+          <tr><td class="label">6</td><td>El Mapa del Sector Humanitario (bonus)</td><td>Los 6 actores del sector (ONG internacionales, ONG nacionales/locales, agencias ONU, donantes institucionales, consorcios, consultoras), cómo contratan, roles viables y barrera de entrada de cada uno, y rutas de entrada inteligentes según el perfil del alumno. Termina con un ejercicio de "Mapa Personal de Encaje".</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="prueba-social">
+      <div class="section-tag">06 · Credibilidad</div>
+      <h2>Prueba social y autoridad</h2>
+      <table>
+        <thead><tr><th>Caso</th><th>Situación de partida</th><th>Resultado</th></tr></thead>
+        <tbody>
+          <tr><td class="label">María</td><td>Tres años aplicando sin una sola entrevista</td><td>Dos entrevistas conseguidas en cinco semanas</td></tr>
+          <tr><td class="label">Carlos</td><td>No conocía a nadie del sector</td><td>Ocho conversaciones con Programme Managers en seis semanas, una vacante no publicada</td></tr>
+          <tr><td class="label">Laura</td><td>Dudas sobre si su perfil encajaba</td><td>Hoy trabaja como Programme Officer en una ONG internacional en Jordania</td></tr>
+          <tr><td class="label">Elena</td><td>No veía cómo encajar en el sector desde Europa</td><td>Coordinación de programas desde Francia, contrato estable</td></tr>
+        </tbody>
+      </table>
+      <h3>Testimonios adicionales: canales del mercado oculto</h3>
+      <table>
+        <thead><tr><th>Caso</th><th>Resultado</th><th>Semanas aplicando el sistema</th><th>Canal usado</th></tr></thead>
+        <tbody>
+          <tr><td class="label">María G.</td><td>Primera conversación real con un decisor (Programme Manager de ACTED, para una misión aún no publicada)</td><td>6</td><td>LinkedIn más evento sectorial presencial</td></tr>
+          <tr><td class="label">Elena R.</td><td>Red profesional y networking creados, con contactos en MSF, ACNUR y CRE</td><td>5</td><td>LinkedIn más evento sectorial online</td></tr>
+          <tr><td class="label">Carlos M.</td><td>Primera consultoría pagada, 4.500€</td><td>7</td><td>Networking de antiguos alumnos, canal número 7</td></tr>
+          <tr><td class="label">Laura P.</td><td>Primera entrevista, a través de una vacante aún no publicada en portales</td><td>4</td><td>Newsletter especializada, canal número 3</td></tr>
+        </tbody>
+      </table>
+      <p class="subnote">Estos testimonios provienen del carrusel promocional de la guía "El Mercado Oculto: los 9 canales ocultos del sector". Solo se conocen 2 de los 9 canales por su número exacto (3 y 7); el resto de la lista no está disponible en el material aportado.</p>
+
+      <h3>Testimonios en vídeo (YouTube Shorts, redes sociales)</h3>
+      <table>
+        <thead><tr><th>Caso</th><th>Perfil de partida</th><th>Resultado</th></tr></thead>
+        <tbody>
+          <tr><td class="label">Sandra</td><td>26 años, española residente en Colombia. Ligera experiencia previa y voluntariado, sentía opacidad al aplicar a ofertas</td><td>Adquirió el lenguaje técnico necesario, agilizó su proceso de postulación y logró su primera entrevista en el Consejo Noruego para Refugiados</td></tr>
+          <tr><td class="label">Esther</td><td>45 años, profesional en Cruz Roja (Jaén), doctorado y 4 idiomas (entre ellos árabe). Atrapada en un puesto local con alta carga laboral</td><td>Tradujo su bagaje académico y trayectoria previa al lenguaje de la cooperación internacional, ganando la seguridad para buscar alternativas reales en el sector</td></tr>
+          <tr><td class="label">Natalia</td><td>34 años, 7 años de experiencia previa en proyectos y sector privado. Bloqueada tras 6 meses aplicando sin éxito</td><td>Tradujo su bagaje previo, llenó sus vacíos de conocimiento sectorial y estructuró un perfil competitivo adaptado al sector</td></tr>
+          <tr><td class="label">Belén Asensio</td><td>55 años, consultora independiente con 20 años de experiencia previa en el sector a nivel nacional. Bloqueada tras 7 meses de búsqueda</td><td>Estructuró una narrativa profesional definida para los seleccionadores, adaptada a la contratación por cuenta ajena y enfocada en mayor estabilidad laboral</td></tr>
+          <tr><td class="label">Ana</td><td>31 años, mexicana, con el objetivo de incursionar en el mercado de cooperación español</td><td>Definió su estrategia, adaptó su candidatura al mercado local y consiguió empleo antes de finalizar la formación</td></tr>
+          <tr><td class="label">Jose Luis</td><td>38 años, formación técnica y experiencia inicial en el sector. Perdía tiempo con candidaturas desalineadas</td><td>Aprendió a identificar ofertas acordes a su perfil, dominó la preparación de entrevistas complejas y afianzó su rumbo en el sector con total seguridad</td></tr>
+          <tr><td class="label">Alejandra</td><td>29 años, mexicana trasladada a España, 4 años de experiencia en sector privado. Un año de búsqueda infructuosa</td><td>Aprendió a hablar el lenguaje de la cooperación y a traducir su experiencia previa, consiguiendo empleo en una ONG en menos de dos meses</td></tr>
+          <tr><td class="label">Inés</td><td>32 años, profesional en Cruz Roja España, con la meta de dar el salto a la cooperación internacional</td><td>Redefinió su posicionamiento, estructuró una red de contactos estratégica y consiguió dos entrevistas en solo dos meses</td></tr>
+        </tbody>
+      </table>
+      <p class="subnote">Enlaces de los 8 vídeos disponibles en la guía de ventas interactiva (pestaña Prellamada), no reproducidos aquí por brevedad.</p>
+
+      <div class="callout"><strong>Cómo usar los testimonios:</strong> solo se puede compartir el nombre de pila y el logro conseguido, nunca más datos personales, por protección de datos. En su lugar, el argumento de más peso es la trayectoria de Ana y Michael: más de 25 años de experiencia combinada, acompañando de forma 1 a 1 durante más de 8 años y con este programa grupal desde marzo. Muchos alumnos consiguen sus primeras entrevistas o posiciones antes incluso de terminar los 2 meses formativos. Nunca prometer que un candidato concreto vaya a repetir el resultado de otro.</div>
+      <div class="grid-4">
+        <div class="card"><h4>25+</h4><p>Años de experiencia combinada de los fundadores</p></div>
+        <div class="card"><h4>800+</h4><p>Procesos de selección liderados por Michael</p></div>
+        <div class="card"><h4>50M€</h4><p>En presupuestos gestionados por Ana</p></div>
+        <div class="card"><h4>400</h4><p>Personas en equipos gestionados — ver nota de verificación abajo</p></div>
+      </div>
+      <div class="callout"><strong>⚠ Verificar con David/Ana:</strong> las presentaciones completas más recientes de los fundadores atribuyen la gestión de "equipos de hasta 400 personas" a Michael Sainvil, mientras que este informe (versión anterior) lo atribuía a Ana Martín. No se ha corregido de forma unilateral — confirmar cuál es correcto antes de usarlo en llamada.</div>
+
+      <h3>Presentación completa de los fundadores</h3>
+      <p><strong>Ana Martín</strong> — Mi nombre es Ana Martín y llevo más de diez años trabajando en cooperación internacional desde dentro del sistema. A lo largo de mi trayectoria he gestionado programas humanitarios y de desarrollo de gran envergadura, con presupuestos multimillonarios y financiados por donantes internacionales de gran peso. He coordinado equipos en contextos frágiles y en países en desarrollo, donde las decisiones no son teóricas, sino operativas y con impacto real en personas y comunidades. Además, he participado en cientos de procesos de selección desde el otro lado de la mesa, evaluando candidaturas, entrevistando perfiles junior y senior y tomando decisiones reales de contratación. Esta doble mirada — gestión en terreno y selección de personal — es la que me permite entender no solo cómo funciona el sector, sino qué hace que un perfil avance o se quede fuera, y traducir ese conocimiento en un acompañamiento honesto, estratégico y aplicable para quienes quieren entrar en cooperación con criterio y sin perder años en el intento.</p>
+      <p><strong>Michael Sainvil</strong> — La otra pieza clave de este equipo es Michael Sainvil, experto senior en Recursos Humanos y reclutamiento humanitario internacional, con más de quince años de experiencia trabajando directamente dentro de organizaciones humanitarias. A lo largo de su trayectoria ha participado en más de ochocientos procesos de selección, no como consultor externo, sino desde dentro de las organizaciones, siendo responsable de todo el ciclo: desde la preselección de candidaturas y las entrevistas, hasta el onboarding y la evaluación del desempeño una vez la persona ya está contratada. Además, ha gestionado grandes estructuras organizativas, con equipos de hasta 400 personas en contextos complejos y frágiles, encargándose de la planificación de capacidades, la gestión del rendimiento y la retención de talento. Esto significa que conoce exactamente qué se busca en un perfil, qué hace que una candidatura avance o se descarte, y cómo piensan realmente los equipos de selección en el sector humanitario.</p>
+      <table>
+        <thead><tr><th>Fundador</th><th>Trayectoria resumida</th></tr></thead>
+        <tbody>
+          <tr><td class="label">Ana Martín</td><td>Más de 10 años en cooperación internacional, liderazgo de programas en terreno, gestión de equipos y presupuestos de más de 50 millones de euros</td></tr>
+          <tr><td class="label">Michael Sainvil</td><td>Más de 15 años en Recursos Humanos sectoriales, más de 800 procesos de selección liderados en Europa, África, Asia y América Latina, equipos de hasta 400 personas</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <div class="seal-divider"><span class="line"></span>
+      <svg viewBox="0 0 100 100" fill="none"><polygon points="50,4 90,26 90,74 50,96 10,74 10,26" stroke="#8E763A" stroke-width="4" fill="none"/><path d="M33 50 L45 62 L69 36" stroke="#8E763A" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <span class="line right"></span></div>
+
+    <section id="embudo">
+      <div class="section-tag">07 · Funnel</div>
+      <h2>Embudo de conversión</h2>
+      <div class="phase">
+        <div class="num active">1</div>
+        <div class="phase-body"><h4>Vídeo corto en redes sociales</h4><p>Contenido orgánico en formato vertical, con la creadora hablando a cámara sobre los motivos por los que las ONG no llaman a los candidatos. Sirve como primer punto de contacto que dirige hacia el webinar o la guía gratuita.</p></div>
+      </div>
+      <div class="phase">
+        <div class="num active">2</div>
+        <div class="phase-body"><h4>Webinar de Conversión Rápida</h4><p>Presenta el gancho, la prueba social, los 2 pilares, la cualificación del perfil y la autoridad de los fundadores.</p></div>
+      </div>
+      <div class="phase">
+        <div class="num active">3</div>
+        <div class="phase-body"><h4>Guía gratuita como incentivo</h4><p>Al hacer clic para iniciar la conversación, se entrega la guía "Los 7 motivos por los que no te llaman las ONGs", valorada en 47€, de forma gratuita.</p></div>
+      </div>
+      <div class="phase">
+        <div class="num active">4</div>
+        <div class="phase-body"><h4>Conversación por WhatsApp</h4><p>Charla real, sin compromiso, para analizar la situación del candidato y determinar si el Programa FSC es la solución adecuada. Plazas limitadas porque se responde personalmente a cada mensaje.</p></div>
+      </div>
+      <div class="phase">
+        <div class="num active">5</div>
+        <div class="phase-body"><h4>Cierre del Programa FSC</h4><p>Presentación del programa completo y su inversión, una vez confirmado el encaje.</p></div>
+      </div>
+      <div class="callout"><strong>Vía alternativa de entrada:</strong> el Checklist de Encaje Profesional (test de 3 minutos) funciona en paralelo al webinar. También termina invitando a una sesión gratuita, en este caso llamada "Sesión de Claridad Estratégica" de 20 minutos. Es el mismo tipo de conversación de diagnóstico, con nombre adaptado al punto de entrada. Hay contenido audiovisual corto adicional (formato entrevista en la calle) que promociona este test en redes.</div>
+      <div class="callout"><strong>Otra vía de entrada:</strong> un carrusel de testimonios en redes sociales invita a comentar la palabra "GUÍA" para recibir gratis "El Mercado Oculto: los 9 canales ocultos del sector", otra guía distinta a "Los 7 motivos". Los testimonios de este carrusel están recogidos en la sección de Prueba social.</div>
+      <div class="callout"><strong>Otra vía de entrada más:</strong> un vídeo corto muestra a la creadora explicando que las ONGs no solo buscan trabajadores sociales, sino todo tipo de perfiles técnicos que encajan a la perfección y que se pagan bien, seguido de un collage con siete palabras clave (nutrición, arquitectura, comunicación, salud, idiomas y más) que remiten a la guía "Qué carreras tienen cabida en el sector humanitario". El CTA de este vídeo es escribir la palabra "TEST" para recibir la guía inmediatamente, un tercer trigger distinto de "GUÍA".</div>
+    </section>
+
+    <section id="checklist">
+      <div class="section-tag">07b · Lead magnet</div>
+      <h2>Checklist de encaje profesional</h2>
+      <p>Test de 15 preguntas repartidas en 4 secciones (Formación, Experiencia Profesional, Competencias Transversales, Disponibilidad), con un sistema de puntuación de hasta 52 puntos basado en más de 800 procesos de selección reales. El resultado ubica al candidato en uno de 4 perfiles, cada uno con puestos concretos, organizaciones y rango salarial.</p>
+      <table>
+        <thead><tr><th>Resultado</th><th>Qué significa</th><th>Puestos ejemplo</th><th>Salario aproximado</th></tr></thead>
+        <tbody>
+          <tr><td class="label">0 a 15 puntos, Perfil Junior en Construcción</td><td>Aún no cumple los requisitos mínimos de entrada directa</td><td>Voluntariado estructurado, prácticas en ONG, consultoría corta especializada</td><td>No remunerado o consultoría puntual</td></tr>
+          <tr><td class="label">16 a 28 puntos, Perfil Entry-Level Operativo</td><td>Cumple los requisitos mínimos para entrada operativa</td><td>Project/Programme Assistant, Field Officer, MEAL Officer Junior</td><td>25.000€ a 38.000€/año</td></tr>
+          <tr><td class="label">29 a 40 puntos, Perfil Mid-Level con Especialización</td><td>Rango medio profesional, formación sólida más experiencia comprobable</td><td>Programme/Project Officer, MEAL Manager, Technical Advisor, Deputy Programme Manager</td><td>38.000€ a 60.000€/año</td></tr>
+          <tr><td class="label">41 a 52 puntos, Perfil Senior o Coordinación</td><td>Experiencia consolidada más competencias de gestión y track record demostrable</td><td>Programme Manager, Coordinator, Country Director adjunto, Technical Specialist o Senior Advisor</td><td>55.000€ a 95.000€/año, más beneficios</td></tr>
+        </tbody>
+      </table>
+      <p class="subnote">Cada resultado incluye además el primer paso concreto a dar en las próximas 48 horas y qué le falta al candidato para subir de nivel. Útil como referencia rápida en la conversación: si el candidato ya hizo el test, se le puede hablar directamente de su rango salarial objetivo y los puestos que encajan con su perfil actual.</p>
+    </section>
+
+    <section id="carreras">
+      <div class="section-tag">07c · Lead magnet</div>
+      <h2>Qué carreras tienen cabida en el sector humanitario</h2>
+      <p>Guía descargable "7 perfiles que encajan (y quizás no lo sabías)". Refuerza el mensaje central de la marca: la cooperación internacional no se paga por vocación, sino por impacto y competencias, y necesita tanto perfiles sociales como técnicos para gestionar proyectos complejos, equipos internacionales, presupuestos millonarios e infraestructuras, salud, alimentación y comunicación.</p>
+      <table>
+        <thead><tr><th>Perfil</th><th>Dónde encajan</th><th>Roles reales</th><th>Por qué se paga bien</th></tr></thead>
+        <tbody>
+          <tr><td class="label">1. Nutrición / Ciencia de los alimentos</td><td>Seguridad alimentaria, nutrición infantil y comunitaria, emergencias humanitarias, evaluación nutricional</td><td>Técnico/a de nutrición, Oficial de seguridad alimentaria, Asesor/a en programas WASH y Nutrición</td><td>El impacto es medible: desnutrición, mortalidad, resultados</td></tr>
+          <tr><td class="label">2. ADE / Económicas y Finanzas</td><td>Gestión de proyectos, control financiero, justificación de subvenciones, auditorías</td><td>Técnico/a financiero de proyectos, Project manager junior, Grants officer</td><td>Sin dinero bien gestionado no hay cooperación</td></tr>
+          <tr><td class="label">3. Comunicación / Periodismo y Marketing</td><td>Comunicación institucional, campañas de impacto, visibilidad de proyectos, rendición de cuentas</td><td>Técnico/a de comunicación, Storytelling y reporting, Digital officer</td><td>Los proyectos necesitan demostrar resultados para seguir financiándose</td></tr>
+          <tr><td class="label">4. Ingeniería / Arquitectura</td><td>Agua y saneamiento (WASH), infraestructuras, vivienda social, energía y sostenibilidad</td><td>Ingeniero/a de proyectos, Técnico/a WASH, Coordinador/a de obra humanitaria</td><td>Los errores pueden costar vidas y millones a las organizaciones</td></tr>
+          <tr><td class="label">5. Profesionales de la salud</td><td>Sistemas de salud, emergencias, salud mental y psicosocial, prevención y epidemiología</td><td>Coordinador/a sanitario/a, Técnico/a de salud pública, Oficial de programas médicos</td><td>La experiencia sanitaria es crítica y escasa en muchos contextos vulnerables</td></tr>
+          <tr><td class="label">6. Traductores / Filólogos / Idiomas</td><td>Coordinación internacional, comunicación con donantes, traducción técnica, mediación intercultural</td><td>Language officer, Project assistant, Communication &amp; liaison</td><td>Los proyectos son multilaterales y multilingües</td></tr>
+          <tr><td class="label">7. Perfiles técnicos no tan "evidentes"</td><td>IT y datos/estadística, logística, RRHH, derecho y relaciones laborales, diseño/UX, educación y pedagogía, medio ambiente y agricultura, y muchos más</td><td>Varía según especialidad</td><td>Si una empresa necesita ese perfil, un proyecto de cooperación también</td></tr>
+        </tbody>
+      </table>
+      <div class="callout"><strong>Mensaje de cierre de la guía:</strong> "La diferencia entre quien entra en cooperación y quien no, no es la vocación: es saber cómo hacerlo, es la estrategia." La guía termina invitando a escribir para recibir ayuda a encajar el perfil concreto y crear un plan realista, el mismo tipo de conversación de diagnóstico que el resto de vías de entrada.</div>
+      <p class="subnote">Esta guía se promociona también con un vídeo corto en redes (ver Embudo de conversión, vía de entrada adicional), con CTA para escribir la palabra "TEST".</p>
+    </section>
+
+    <section id="webinar">
+      <div class="section-tag">08 · Contexto de venta</div>
+      <h2>Guion del webinar</h2>
+      <p>Guion completo de los 10 bloques que el candidato ya ha visto antes de escribir por WhatsApp. Útil para no repetir lo mismo, continuar la conversación donde el webinar la dejó, y reutilizar frases textuales que el candidato ya reconoce.</p>
+      <details class="acc" open>
+        <summary>1. Gancho</summary>
+        <div class="acc-body">
+          <p class="say">"Deja de aplicar a ciegas. ¿Sabías que la mayoría de puestos en cooperación internacional se cubren o se asignan antes de publicarse? Te voy a mostrar cómo puedes conseguir tus primeras entrevistas en menos de ocho semanas."</p>
+        </div>
+      </details>
+      <details class="acc">
+        <summary>2. Prueba social</summary>
+        <div class="acc-body">
+          <p>Los cuatro casos con nombre y resultado concreto: María (tres años aplicando sin una entrevista, dos entrevistas en cinco semanas), Carlos (no conocía a nadie del sector, ocho conversaciones con Programme Managers en seis semanas, una vacante no publicada), Laura (dudas sobre si su perfil encajaba, hoy Programme Officer en una ONG internacional en Jordania) y Elena (no veía cómo encajar desde Europa, hoy coordinación de programas desde Francia con contrato estable y bien remunerado).</p>
+        </div>
+      </details>
+      <details class="acc">
+        <summary>3. Presentación de los 2 pilares</summary>
+        <div class="acc-body"><p>Alineación Profesional Humanitaria y Networking Operativo-Estratégico, nombrados pero no explicados en profundidad todavía en este punto.</p></div>
+      </details>
+      <details class="acc">
+        <summary>4. Cualificación</summary>
+        <div class="acc-body">
+          <p>Este vídeo <strong>SÍ es para</strong>: profesionales comprometidos con su transición, personas que han invertido en formación humanitaria pero no consiguen resultados, y quienes están listos para implementar un enfoque estratégico y dejar de improvisar.</p>
+          <p>Este vídeo <strong>NO es para</strong>: quienes buscan una solución mágica sin comprometerse, quienes no están dispuestos a cambiar cómo aplican y se posicionan, y quienes buscan acumular más títulos en lugar de tomar acción estratégica.</p>
+        </div>
+      </details>
+      <details class="acc">
+        <summary>5. Historia y autoridad</summary>
+        <div class="acc-body">
+          <p>Ana Martín se presenta con más de diez años en cooperación internacional, gestión de programas humanitarios con presupuestos multimillonarios, coordinación de equipos en contextos frágiles, y cientos de procesos de selección vistos desde el otro lado de la mesa. Michael Sainvil aporta más de quince años en RRHH y reclutamiento humanitario, más de 800 procesos de selección desde dentro de las organizaciones (preselección, entrevistas, onboarding y evaluación de desempeño), y gestión de equipos de hasta 400 personas.</p>
+          <p class="say">"Durante años veía el mismo patrón: candidaturas con másteres, idiomas y voluntariados que iban directas a la papelera. No porque no fueran válidas, sino porque no sabían comunicar su valor en el lenguaje del sector humanitario. El problema no es la falta de formación, es que nadie te enseña cómo funciona realmente la cooperación desde dentro."</p>
+        </div>
+      </details>
+      <details class="acc">
+        <summary>6 y 7. Desarrollo del Pilar 1 y transición</summary>
+        <div class="acc-body">
+          <p>La mayoría de profesionales envía CVs genéricos que no hablan el idioma del sector, aplica sin saber si encaja y acumula másteres pensando que eso abrirá puertas. El sector tiene códigos y criterios que no se enseñan en ningún máster: los CVs no pasan el filtro de los seis segundos porque no contienen las palabras clave que buscan los seleccionadores.</p>
+          <p>Caso de Laura como ejemplo: máster en cooperación y tres años de experiencia en gestión de proyectos en el sector privado, más de 80 candidaturas sin respuesta. El problema no era técnico sino estratégico: el CV no estaba adaptado al sector ni al puesto. Con el CV adaptado, consiguió su primera entrevista en tres semanas.</p>
+          <p class="say">"Las organizaciones no solo buscan gente que haya estado en terreno físicamente. Buscan buenos gestores de proyecto, financieros, logistas, comunicadores. Si has coordinado equipos, gestionado presupuestos o liderado proyectos en cualquier sector, tienes competencias transferibles. El problema no es que te falten esas competencias, es que no sabes nombrarlas como se nombran en cooperación."</p>
+          <p><strong>Cómo implementarlo:</strong> dejar el CV genérico y adaptarlo a cada puesto usando el lenguaje específico del sector (gestión del ciclo de proyecto, marco lógico, donantes institucionales, coordinación multisectorial); identificar roles realistas para el perfil actual, no los de dentro de cinco años; construir una narrativa coherente entre CV, carta y LinkedIn.</p>
+        </div>
+      </details>
+      <details class="acc">
+        <summary>8. Desarrollo del Pilar 2</summary>
+        <div class="acc-body">
+          <p>Aplicar solo por portales como ReliefWeb o Impactpool pone siempre en desventaja: cuando una oferta se publica ya hay cientos de candidatos compitiendo, y muchas veces el puesto ya tiene un candidato interno favorito.</p>
+          <p>Caso de Carlos como ejemplo: no conocía a nadie del sector; en seis semanas estableció conversaciones reales con ocho profesionales de organizaciones de interés, una de esas conversaciones le llevó a una vacante que nunca se publicó. Hoy trabaja en Médicos Sin Fronteras.</p>
+          <p class="say">"Nadie nace con contactos, se crean. Cuando aprendes a acercarte con una pregunta inteligente sobre la trayectoria de la persona, en lugar de pedir favores, la tasa de respuesta se multiplica."</p>
+          <p><strong>Cómo implementarlo:</strong> optimizar LinkedIn para que hable el idioma del sector; identificar Programme Managers, HR Officers y coordinadores (no directores) de las organizaciones de interés; acercarse con preguntas específicas sobre su trayectoria o proyectos, nunca pidiendo trabajo directamente; hacer seguimiento en las 48 horas siguientes con un mensaje de agradecimiento.</p>
+        </div>
+      </details>
+      <details class="acc">
+        <summary>9. Recapitulación</summary>
+        <div class="acc-body"><p>Con Alineación Profesional Humanitaria y Networking Operativo-Estratégico, el candidato tiene las herramientas para conseguir sus primeras entrevistas y acceder al sector de forma estratégica.</p></div>
+      </details>
+      <details class="acc">
+        <summary>10. Llamada a la acción</summary>
+        <div class="acc-body">
+          <p>Se presentan dos opciones: implementarlo por su cuenta desde ya, o hacer clic para mantener una conversación por WhatsApp sin compromiso, donde se analiza su situación, sus intentos anteriores y sus objetivos. Como regalo por contactar, recibe la guía "Los 7 principales motivos por los que no te llaman las ONGs" (valorada en 47€), gratis. Las plazas son limitadas porque se responde personalmente a cada mensaje.</p>
+          <p class="say">"¿Te imaginas cómo te sentirás cuando recibas tu primera entrevista con una ONG internacional? Tu transición profesional está a un mensaje de distancia. ¡Te veo dentro!"</p>
+        </div>
+      </details>
+    </section>
+
+    <div class="seal-divider"><span class="line"></span>
+      <svg viewBox="0 0 100 100" fill="none"><polygon points="50,4 90,26 90,74 50,96 10,74 10,26" stroke="#8E763A" stroke-width="4" fill="none"/><path d="M33 50 L45 62 L69 36" stroke="#8E763A" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <span class="line right"></span></div>
+
+    <section id="prellamada-setter">
+      <div class="section-tag">08b · Setter</div>
+      <h2>Guion de prellamada (Setter)</h2>
+      <p>Objetivo: calentar al lead, cualificarlo, confirmar la sesión y anticipar objeciones antes de la llamada de venta. Bien ejecutada, puede aumentar hasta un 50% la probabilidad de cierre. Idealmente se hace en los primeros 5 minutos tras agendar, cuando el interés del lead es máximo.</p>
+      <details class="acc" open>
+        <summary>1. Saludo y primera impresión</summary>
+        <div class="acc-body">
+          <p class="say">"¡Hola [Nombre]! Soy [Tu nombre], de First Step Cooperation. ¿Cómo estás? Te llamo porque acabo de ver que has agendado tu sesión estratégica con nosotros, y quería ponerme en contacto contigo ahora mismo para confirmar todo y prepararnos bien. ¿Tienes un par de minutos?"</p>
+        </div>
+      </details>
+      <details class="acc">
+        <summary>2. Confirmar la sesión</summary>
+        <div class="acc-body">
+          <p class="say">"Perfecto. Entonces la sesión queda confirmada para el [día] a las [hora]. ¿Te llega bien ese horario o prefieres que lo ajustemos?"</p>
+          <p>Si hay disponibilidad anterior, ofrecer adelantar el hueco y confirmar que la invitación llegó al correo.</p>
+          <div class="callout"><strong>Enviar justo aquí, nada más agendar:</strong> el <a href="https://assets.cdn.filesafe.space/ehcjbHdq0skqQPG7lv6I/media/697b0b78c9e16645b062de85.mp4" target="_blank" rel="noopener">vídeo de preparación de la llamada</a>. Se manda siempre después de agendar, no antes — es el momento en que el lead está más receptivo.</div>
+        </div>
+      </details>
+      <details class="acc">
+        <summary>3. Verificar que ha visto el material</summary>
+        <div class="acc-body">
+          <p class="say">"Antes de la sesión suelo pedir a las personas que vean el webinar / la presentación que te enviamos, porque así aprovechamos mucho mejor el tiempo juntos. ¿Has tenido oportunidad de verlo?"</p>
+          <p>Si no lo ha visto, reenviarlo en el momento, destacando la parte sobre cómo funciona el networking en el sector.</p>
+        </div>
+      </details>
+      <details class="acc">
+        <summary>4. Preguntas de cualificación</summary>
+        <div class="acc-body">
+          <p>Conversacional, no como formulario: cuánto lleva intentando entrar en cooperación y qué ha probado, qué es lo que más le bloquea, si trabaja actualmente en otro sector o está a tiempo completo en la búsqueda, y si tiene formación específica o viene de otro sector con experiencia transferible.</p>
+        </div>
+      </details>
+      <details class="acc">
+        <summary>5. Preguntar por personas involucradas en la decisión</summary>
+        <div class="acc-body">
+          <p>Paso crítico para evitar la objeción "tengo que consultarlo" en la llamada de venta.</p>
+          <p class="say">"Una última cosa — en este tipo de sesiones a veces la decisión de inscribirse la toman con su pareja, o con alguien de confianza. ¿Estarás solo/a en la sesión, o habrá alguien más contigo?" Si hay otra persona, se recomienda que esté presente aunque sea de fondo.</p>
+        </div>
+      </details>
+      <details class="acc">
+        <summary>6. Motivar y generar expectativa</summary>
+        <div class="acc-body">
+          <p class="say">"Perfecto, [Nombre]. Pues con todo lo que me has contado — llevas [X tiempo] intentando entrar, has hecho [formación], y lo que más te frena es [su bloqueo principal] — te digo que esta sesión va a ser muy útil para ti. Lo que hacemos en ella es analizar exactamente tu perfil, ver qué roles encajan con tu trayectoria real, y definir una estrategia clara para que dejes de aplicar a ciegas."</p>
+        </div>
+      </details>
+      <details class="acc">
+        <summary>7. Cierre y recordatorios</summary>
+        <div class="acc-body">
+          <p class="say">"Genial. Pues nos vemos el [día] a las [hora]. Te envío un recordatorio 24 horas antes y otro por la mañana para que no se te escape."</p>
+          <p>Recordatorios posteriores: 24-48h antes por WhatsApp y email con mensaje motivador corto; la mañana del día, mensaje breve recordando la hora.</p>
+        </div>
+      </details>
+      <h3>Gestión de imprevistos</h3>
+      <table>
+        <thead><tr><th>Situación</th><th>Respuesta</th></tr></thead>
+        <tbody>
+          <tr><td class="label">No ha recibido la invitación</td><td>"No te preocupes, te la reenvío ahora mismo. Confirma en dos minutos que te llegó."</td></tr>
+          <tr><td class="label">Poco presupuesto o momento complicado</td><td>"Entiendo. Cuéntame un poco más, porque dependiendo de tu situación hay distintas formas de acceder al programa. No te preocupes por eso ahora, hablamos en la sesión."</td></tr>
+          <tr><td class="label">Duda si la sesión es para él/ella</td><td>"Precisamente para eso es la sesión, para ver si podemos ayudarte o no. No hay compromiso ninguno. Si veo que no encajas, te lo digo directamente."</td></tr>
+          <tr><td class="label">Quiere cancelar o posponer</td><td>"Entiendo perfectamente. ¿Hay algún motivo en particular? A veces podemos ajustar el horario ahora mismo."</td></tr>
+        </tbody>
+      </table>
+      <div class="callout"><strong>Notas finales para el setter:</strong> no seguir el guion de forma rígida, es una conversación real. Tomar nota de la situación del lead, su bloqueo principal y cuánto lleva intentándolo: esa información es oro para el closer. Si el lead está muy caliente, se puede intentar adelantar la sesión en la misma llamada. Transmitir confianza y energía, no urgencia artificial.</div>
+    </section>
+
+    <div class="seal-divider"><span class="line"></span>
+      <svg viewBox="0 0 100 100" fill="none"><polygon points="50,4 90,26 90,74 50,96 10,74 10,26" stroke="#8E763A" stroke-width="4" fill="none"/><path d="M33 50 L45 62 L69 36" stroke="#8E763A" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <span class="line right"></span></div>
+
+    <section id="cualificacion-setter">
+      <div class="section-tag">08c · Setter</div>
+      <h2>Cualificación del lead (guion IA Setter)</h2>
+      <p>Guion de cualificación profunda para setter, pensado para escribir mensajes cortos (2-3 preguntas por turno) o preparar la prellamada/llamada. El objetivo es que el lead confirme su propio problema con sus palabras, antes de conectar con el dolor real y visualizar el resultado.</p>
+      <details class="acc" open>
+        <summary>Apertura — romper defensas (primeros 60 segundos)</summary>
+        <div class="acc-body"><p class="say">"Antes de empezar, cuéntame... ¿qué te trajo aquí hoy?"</p></div>
+      </details>
+      <details class="acc">
+        <summary>Perfil y diagnóstico del problema</summary>
+        <div class="acc-body">
+          <p>Objetivo: que el lead entienda por sí mismo por qué no ha avanzado. Preguntas: formación/experiencia específica en cooperación, cuánto tiempo lleva intentándolo, si ha conseguido alguna entrevista, si adapta el CV a cada oferta, si ha hecho networking real, por qué cree que no le ha funcionado, su nivel de compromiso, y si tiene urgencia por estabilizarse en el sector.</p>
+        </div>
+      </details>
+      <details class="acc">
+        <summary>Cierre de diagnóstico — pregunta bisagra</summary>
+        <div class="acc-body">
+          <p class="say">"Entonces, si te entiendo bien... llevas [X tiempo], has invertido en [X], has aplicado a [X ofertas], y sigues sin resultados. ¿Lo estoy entendiendo correctamente?"</p>
+          <p>Esperar su confirmación antes de seguir: el lead confirma su propio fracaso con sus palabras, sin que el setter lo juzgue. Es uno de los momentos más poderosos de la conversación.</p>
+        </div>
+      </details>
+      <details class="acc">
+        <summary>Dolor real (el motor de compra)</summary>
+        <div class="acc-body">
+          <p>Objetivo: conectar con la herida real, no con el síntoma. Preguntas: cómo se siente al no recibir respuestas, qué siente al ver que otros con menos formación entran, si ha pensado en tirar la toalla, qué pasaría si en un año sigue igual.</p>
+        </div>
+      </details>
+      <details class="acc">
+        <summary>Visión y deseo</summary>
+        <div class="acc-body">
+          <p>Objetivo: que visualice su vida después del programa antes de ver el precio. Preguntas: en qué plazo necesitaría el primer contrato, qué significaría a nivel personal, si cree que su perfil tiene posibilidades reales y por qué.</p>
+        </div>
+      </details>
+      <details class="acc">
+        <summary>Pregunta estrella — nunca saltársela</summary>
+        <div class="acc-body">
+          <p class="say">"¿Cuál es la necesidad o el dolor que hace que necesites empezar YA, y no esperar otros 6 meses más?"</p>
+          <p>Si no tiene una respuesta con peso emocional real, no está listo/a para comprar; no avanzar hacia el precio sin esta respuesta. Ayuda si no profundiza: <span class="say">"Piensa en tres áreas: tu desarrollo profesional, tu autoestima como profesional, y tu calidad de vida. ¿En cuál de las tres está el problema que te trajo aquí hoy?"</span></p>
+        </div>
+      </details>
+      <details class="acc">
+        <summary>Momento informativo</summary>
+        <div class="acc-body">
+          <p class="say">"First Step Cooperation es un programa de acompañamiento estratégico de varias semanas para profesionales que quieren entrar o avanzar en cooperación internacional pero no saben cómo posicionarse. No es un curso online que haces solo, ni una mentoría puntual: es un proceso guiado, con sesiones semanales y acompañamiento continuo. Se apoya en dos pilares: trabajar tu perfil y posicionamiento, y enseñarte a crear acceso real al sector, no solo aplicar a portales donde compites con cientos de personas, sino aprovechar ese 70% de puestos que nunca llegan a publicarse. ¿Tiene sentido lo que te estoy describiendo?"</p>
+        </div>
+      </details>
+      <details class="acc">
+        <summary>Cualificación financiera y compromiso</summary>
+        <div class="acc-body">
+          <p>Objetivo: detectar red flags y preparar el terreno para el precio. Preguntas: cuánto ha invertido hasta ahora (másteres, cursos, voluntariados, coaching) y qué le acercó realmente al empleo, si cree que conseguir el primer contrato merece una inversión, si tiene disponibilidad real de tiempo, y si la decisión la toma solo/a o debe consultarla.</p>
+        </div>
+      </details>
+      <details class="acc">
+        <summary>Pregunta de inversión comparativa — el golpe de realidad</summary>
+        <div class="acc-body">
+          <p class="say">"Si mañana consiguieras tu primer contrato en una ONG internacional, ¿sabes cuánto podrías cobrar al mes aproximadamente? ¿Y cuántos días de ese sueldo necesitarías para recuperar la inversión del programa?"</p>
+          <p class="say">"Los salarios en cooperación internacional en una primera etapa rondan los 2.500€/mes, pero en los siguientes tres a cinco años puedes estar ganando unos 4.000€-5.000€/mes fácilmente... así que imagina el retorno que tendrías."</p>
+          <p class="subnote">Estas cifras son coherentes con las bandas detalladas del <a href="#checklist">Checklist de Encaje Profesional</a> (25.000€-38.000€/año en perfil entry-level, hasta 55.000€-95.000€/año en perfil senior). Usar siempre esa tabla como referencia si el candidato pide más detalle por tipo de rol.</p>
+          <p>Que el lead haga el cálculo en voz alta, no el setter: así el precio deja de ser un obstáculo y se convierte en una obviedad.</p>
+        </div>
+      </details>
+      <h3>Reglas de oro del setter</h3>
+      <table>
+        <thead><tr><th>Regla</th><th>Por qué</th></tr></thead>
+        <tbody>
+          <tr><td class="label">Deja hablar primero al lead en la apertura</td><td>Te da el mapa completo antes de empezar</td></tr>
+          <tr><td class="label">Máximo 2-3 preguntas por mensaje o turno</td><td>Conversación natural, no formulario</td></tr>
+          <tr><td class="label">Devuelve siempre sus palabras, no las tuyas</td><td>Genera conexión y confianza real</td></tr>
+          <tr><td class="label">Usa la pregunta bisagra antes del dolor</td><td>Es el momento más poderoso de la conversación</td></tr>
+          <tr><td class="label">Haz el cálculo de inversión comparativa antes del precio</td><td>Convierte el precio del programa en una obviedad</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <div class="seal-divider"><span class="line"></span>
+      <svg viewBox="0 0 100 100" fill="none"><polygon points="50,4 90,26 90,74 50,96 10,74 10,26" stroke="#8E763A" stroke-width="4" fill="none"/><path d="M33 50 L45 62 L69 36" stroke="#8E763A" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <span class="line right"></span></div>
+
+    <section id="guiones-setter-chat">
+      <div class="section-tag">08d · Setter</div>
+      <h2>Guiones de setter por chat (Instagram / WhatsApp)</h2>
+      <p>Guiones de mensajería para los primeros contactos, antes de proponer la agenda. Nunca se envía el lead magnet sin proponer agenda antes.</p>
+      <h3>Bienvenida a nuevos seguidores en Instagram</h3>
+      <p class="say">"Muy buenas [Nombre], ¿cómo estás? Encantado/a de tenerte por aquí! Por ser nuevo seguidor, tengo algunos recursos gratuitos que podrán ayudarte según tu situación actual en tu camino hacia la cooperación internacional. ¿Te interesa?"</p>
+      <p class="subnote">Si responde que sí, continuar con el Script 1 (sin intención explícita de venta).</p>
+      <h3>Para registros del WCR sin acción (no han escrito por WhatsApp)</h3>
+      <p class="say">"Me pongo en contacto contigo porque parece que no has recibido un regalo que venía junto al taller, que es la 'Guía de Palabras Clave para CVs en Cooperación'. ¿Puedes confirmar si lo has recibido?"</p>
+      <p class="subnote">Es habitual que digan que no lo recibieron (es una excusa para continuar la conversación). Responder: "Vaya... quizás ha sido un error. De todas formas, como tengo más recursos gratuitos, ¿te importa que te haga un par de preguntas para saber cuál puedo enviarte para que se ajuste más a tu situación?" y seguir con el Script 1.</p>
+
+      <h3>Script 1 — Sin intención explícita de venta</h3>
+      <p class="subnote">Para quien pide un lead magnet o llega como nuevo seguidor. Objetivo: llevar a llamada.</p>
+      <details class="acc" open>
+        <summary>Etapa 1: Presentación + contexto + pedir permiso</summary>
+        <div class="acc-body"><p class="say">"¡Hola [Nombre]! ¿Qué tal estás?" → "He visto que te interesa '[X lead magnet]'. Como tengo más recursos gratuitos, ¿te importa que te haga un par de preguntas para saber cuál puedo enviarte para que se ajuste más a tu situación?"</p></div>
+      </details>
+      <details class="acc">
+        <summary>Etapa 2: Descubrimiento</summary>
+        <div class="acc-body"><p class="say">"¡Genial! Cuéntame, ¿en qué punto estás con tu objetivo de trabajar en cooperación internacional?"</p></div>
+      </details>
+      <details class="acc">
+        <summary>Etapa 3: Exploración</summary>
+        <div class="acc-body">
+          <p>Seleccionar 2-3 preguntas superficiales según sus respuestas y luego indagar directamente sobre su problema/dolor. Demostrar autoridad al responder y ofrecer empatía con feedback real.</p>
+          <p>Preguntas base: formación relacionada con cooperación o desarrollo; si ha aplicado ya a ofertas y cómo le ha ido; si tiene claro qué rol u organizaciones encajan con su perfil; cómo se siente actualmente con su situación profesional; si el no avanzar le está afectando en algún área específica de su vida.</p>
+        </div>
+      </details>
+      <details class="acc">
+        <summary>Etapa 4: Feedback</summary>
+        <div class="acc-body">
+          <p class="say">"Gracias por compartir todo esto conmigo, [Nombre]. Por lo que me cuentas, veo tres aspectos importantes:"</p>
+          <p>1) Su perfil tiene valor pero no lo está traduciendo al lenguaje del sector (mencionar sÍntoma específico). 2) Los métodos usados hasta ahora no atacan el problema real: el posicionamiento estratégico. 3) Una tercera observación personalizada según sus respuestas. Cerrar con: "¿Te identificas con esto que te digo?"</p>
+        </div>
+      </details>
+      <details class="acc">
+        <summary>Etapa 5: Transición</summary>
+        <div class="acc-body">
+          <p class="say">"Te voy a enviar [el recurso que pidió]. Lo he diseñado específicamente para profesionales como tú que quieren entrar en cooperación con estrategia. Pero viendo tu situación, creo que podría ayudarte de una manera mucho más específica y personalizada. Me gustaría enseñarte exactamente cómo podemos trabajar juntos para que puedas [su objetivo específico]. ¿Te gustaría que tengamos una videollamada gratuita para analizar tu caso en profundidad?"</p>
+        </div>
+      </details>
+      <details class="acc">
+        <summary>Etapa 6: Agendar</summary>
+        <div class="acc-body"><p class="say">"¡Genial! ¿Prefieres para mañana o la próxima semana?" → confirmar hora → "¡Perfecto! Te envío la confirmación de la cita por correo. Nos vemos en la llamada. ¡Vamos a trabajar para que por fin des ese primer paso en cooperación con claridad y estrategia!"</p></div>
+      </details>
+
+      <h3>Script 2 — Con intención explícita de venta</h3>
+      <p class="subnote">Para quien pide información directamente sobre el programa, o escribe desde campaña de Meta. Más directo: sin ofrecer recurso gratuito, se pasa antes a la propuesta de agenda.</p>
+      <details class="acc">
+        <summary>Etapa 1: Presentación + descubrimiento</summary>
+        <div class="acc-body"><p class="say">"¡Hola [Nombre]! ¿Qué tal estás?" → "Soy [Nombre]. Cuéntame, ¿en qué punto estás con tu objetivo de trabajar en cooperación internacional?"</p></div>
+      </details>
+      <details class="acc">
+        <summary>Etapa 2: Exploración</summary>
+        <div class="acc-body"><p>Qué está haciendo actualmente para entrar en el sector, formación relacionada, cuántas ofertas ha aplicado y con qué resultado, si tiene claro qué rol/organizaciones encajan, cómo se siente con su situación, si le está afectando en algún área de su vida.</p></div>
+      </details>
+      <details class="acc">
+        <summary>Etapa 3: Feedback</summary>
+        <div class="acc-body"><p class="say">"[Nombre], gracias por compartir esto conmigo. Ahora entiendo mejor tu situación. Por lo que me cuentas, veo importante que podamos mejorar esta situación cuanto antes, y además, hacerlo de la forma correcta."</p></div>
+      </details>
+      <details class="acc">
+        <summary>Etapa 4: Transición con oferta</summary>
+        <div class="acc-body">
+          <p class="say">"[Nombre], la forma en la que trabajo está diseñada exactamente para casos como el tuyo. De hecho, acabo de terminar de trabajar con [Nombre ejemplo], que llegó con una situación similar a la tuya: llevaba 2 años aplicando sin recibir ni una entrevista. En 8 semanas, consiguió 3 entrevistas y firmó su primer contrato con una ONG internacional en terreno. Me gustaría enseñarte exactamente cómo podemos adaptarlo a tu caso."</p>
+        </div>
+      </details>
+      <details class="acc">
+        <summary>Etapa 5: Agendar</summary>
+        <div class="acc-body"><p class="say">"¿Te gustaría que agendemos una videollamada para analizar tu caso en detalle?" → confirmar día y hora → enviar confirmación por correo.</p></div>
+      </details>
+
+      <h3>Banco de preguntas para no quedarse en blanco</h3>
+      <p class="subnote">Solo como inspiración; no hacer más de 5-6 preguntas en la misma conversación antes de proponer agenda. Categorías disponibles: formación y perfil, candidaturas y búsqueda, networking y contactos, impacto en la vida diaria, intentos anteriores, conocimiento del sector, objetivos, y factores emocionales (síndrome del impostor, miedo a lo desconocido, sensación de soledad en el proceso).</p>
+      <div class="callout"><strong>Consejos de uso:</strong> no hacer todas las preguntas, seleccionar según el caso; intercalar feedback entre preguntas para mostrar escucha activa; mostrar empatía validando emociones; usar la información para personalizar la transición a la oferta con sus palabras específicas; adaptar el lenguaje a cómo se expresa el lead (más empático si es emocional, más técnico si es racional). El objetivo no es interrogar, sino crear una conversación natural. Se puede apoyar con audios para acelerar el proceso.</div>
+    </section>
+
+    <div class="seal-divider"><span class="line"></span>
+      <svg viewBox="0 0 100 100" fill="none"><polygon points="50,4 90,26 90,74 50,96 10,74 10,26" stroke="#8E763A" stroke-width="4" fill="none"/><path d="M33 50 L45 62 L69 36" stroke="#8E763A" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <span class="line right"></span></div>
+
+    <section id="conversacion">
+      <div class="section-tag">09 · Conversación</div>
+      <h2>Conversación de cierre por WhatsApp</h2>
+      <p>El candidato ya vio el webinar y descargó la guía gratuita, o ya completó el Checklist de Encaje Profesional. El comercial se presenta siempre como First Step Cooperation.</p>
+      <details class="acc" open>
+        <summary>1. Apertura personalizada</summary>
+        <div class="acc-body">
+          <p class="say">"Hola [Nombre], soy [nombre] de First Step Cooperation. Vi que descargaste la guía tras el webinar. Cuéntame en qué punto estás con tu transición al sector humanitario."</p>
+        </div>
+      </details>
+      <details class="acc">
+        <summary>2. Diagnóstico rápido</summary>
+        <div class="acc-body">
+          <p class="say">"¿Cuánto tiempo llevas aplicando y cuántas entrevistas has conseguido hasta ahora?"</p>
+        </div>
+      </details>
+      <details class="acc">
+        <summary>3. Conexión con el problema principal</summary>
+        <div class="acc-body">
+          <p class="say">"Por lo que cuentas, el reto no es tu formación, es saber cómo posicionarte y cómo funciona el sector desde dentro. Es justo lo que hemos visto una y otra vez con perfiles como el tuyo."</p>
+        </div>
+      </details>
+      <details class="acc">
+        <summary>4. Presentación del programa</summary>
+        <div class="acc-body">
+          <p class="say">"Te cuento cómo funciona el Programa FSC y vemos juntos si encaja con tu situación."</p>
+        </div>
+      </details>
+      <details class="acc">
+        <summary>5. Cierre</summary>
+        <div class="acc-body">
+          <p class="say">"¿Quieres que agendemos una llamada breve para resolver dudas y ver los siguientes pasos?"</p>
+        </div>
+      </details>
+      <div class="callout"><strong>Regla de oro:</strong> la conversación empieza siempre en el diagnóstico del candidato, nunca con el precio por delante.</div>
+    </section>
+
+    <div class="seal-divider"><span class="line"></span>
+      <svg viewBox="0 0 100 100" fill="none"><polygon points="50,4 90,26 90,74 50,96 10,74 10,26" stroke="#8E763A" stroke-width="4" fill="none"/><path d="M33 50 L45 62 L69 36" stroke="#8E763A" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <span class="line right"></span></div>
+
+    <section id="guion-venta-closer">
+      <div class="section-tag">09b · Closer</div>
+      <h2>Guion completo de llamada de venta (Closer)</h2>
+      <p>Guion de llamada de alto valor en 13 pasos. No es un monólogo: es un mapa de conversación viva que se adapta en tiempo real a lo que dice el prospecto. Regla de oro en el paso de la oferta: usar siempre las palabras literales que usó el prospecto en el descubrimiento, nunca las del guion.</p>
+      <div class="callout"><strong>Cuándo usar este guion frente al de WhatsApp:</strong> la Conversación de cierre por WhatsApp (sección 09) es el primer contacto tras el webinar o la guía gratuita, corto y pensado para llevar a una llamada agendada. Este guion de 13 pasos es el que se sigue <em>en esa llamada</em>, ya con el candidato al teléfono o en videollamada. Son secuenciales, no alternativos: WhatsApp abre la puerta, este guion cierra la venta.</div>
+
+      <details class="acc" open>
+        <summary>1. Química</summary>
+        <div class="acc-body">
+          <p class="say">"¡Hola [Nombre]! ¿Qué tal estás?" → "Oye, estaba justo revisando algunos casos de profesionales que están participando en First Step Cooperation y es increíble ver cómo están transformando completamente su carrera. Me emociona ver cómo personas que llevaban años frustradas aplicando sin respuesta ahora tienen claridad, estrategia y, sobre todo, entrevistas reales con ONGs internacionales." → "¿Desde dónde me llamas?"</p>
+          <p>Si menciona ciudad/país, reforzar con casos de esa zona. Cerrar con: "¿Te parece si te explico cómo vamos a llevar la llamada?"</p>
+        </div>
+      </details>
+      <details class="acc">
+        <summary>2. Encuadre</summary>
+        <div class="acc-body">
+          <p class="say">"Quiero sobre todo saber tu situación actual, qué está pasando ahora mismo... Dónde quieres estar también. Si veo que encaja y te puedo ayudar, te muestro cómo sería el paso a paso exacto y la inversión, que tú lo veas todo. En caso contrario, si veo que no te puedo ayudar te lo diré, que no pasa absolutamente nada. ¿Te parece?"</p>
+        </div>
+      </details>
+      <details class="acc">
+        <summary>3. Descubrimiento y derribar puentes</summary>
+        <div class="acc-body">
+          <p><strong>Perfil personal (3-4 preguntas numéricas o sí/no, para que el lead no se explaye):</strong> edad, años de experiencia profesional, idiomas que domina, si tiene máster en cooperación o desarrollo.</p>
+          <p><strong>Estado profesional y candidaturas (romper puentes, derribar las opciones anteriores que cree que le iban a funcionar):</strong> cuántas veces ha intentado entrar, por qué cree que no le ha funcionado, qué formación ha hecho y si era específica o teórica general, si estaba diseñada para su caso concreto, quién le orientaba y con qué frecuencia, si recibía feedback real o aplicaba a ciegas.</p>
+          <p class="say">Atar a Pilar 1: "Es muy común que los profesionales sientan que su perfil no encaja o que les falta algo, cuando en realidad el problema es que no saben traducir su experiencia al lenguaje del sector humanitario. En First Step Cooperation trabajamos precisamente en enseñarte cómo la Alineación Profesional Humanitaria permite identificar qué competencias transferibles tienes, qué roles encajan contigo, y cómo posicionarte."</p>
+          <p><strong>Networking y contactos:</strong> si conoce a alguien del sector, qué significa "aplicar a ofertas" para él/ella, si aplicar a portales le ha dado resultados, qué parte de su estrategia incluye networking real, si usa LinkedIn, si ha asistido a eventos o congresos.</p>
+          <p class="say">Atar a Pilar 2: "Lo que me estás describiendo son señales claras de que te falta acceso real al sector. La mayoría de profesionales no saben que muchas vacantes se cubren por referencias antes de publicarse. Nosotros trabajamos el Networking Operativo-Estratégico para que sepas exactamente cómo, cuándo y con quién conectar."</p>
+          <p>Cerrar el bloque con: <span class="say">"¿Te he dado más claridad sobre lo que necesitas y lo que no necesitas?"</span></p>
+        </div>
+      </details>
+      <details class="acc">
+        <summary>4. Dolor (bajar el tono de voz, empatizar)</summary>
+        <div class="acc-body">
+          <p class="say">"[Nombre], ya hemos hablado de la parte más analítica, pero me gustaría también saber, como persona, tú cómo estás con toda esta situación?" — Pregunta estrella: "¿Cómo te está afectando esto del 1 al 10?"</p>
+          <p>Categorías de dolor a explorar: profesional y de identidad (candidaturas sin respuesta, ver a otros con menos formación entrar, master que no abrió puertas), emocional y mental (frustración, síndrome del impostor, sensación de laberinto sin salida), vida personal (día a día, ansiedad al hablar del tema) y futuro (miedo a seguir igual en 5 años, miedo a haber desperdiciado años de formación).</p>
+        </div>
+      </details>
+      <details class="acc">
+        <summary>5. Por qué ahora / costo de no actuar</summary>
+        <div class="acc-body">
+          <p class="say">"Lo que quiero saber es por qué has decidido comprometerte con este cambio justo ahora. ¿Qué ha cambiado desde hace seis meses o qué te hace no querer esperar otros seis meses más? El motivo para empezar hoy tiene que ser poderoso."</p>
+          <p>Si no profundiza, guiar con las tres áreas: desarrollo profesional y vocación, autoestima y confianza, calidad de vida y estabilidad futura. Cerrar con "Duda" (¿te ves capaz de solucionar esto solo/a?) y "Apoyo" (¿la decisión la tomas tú o debes consultarla?).</p>
+        </div>
+      </details>
+      <details class="acc">
+        <summary>6. Situación deseada (obligatorio, no saltárselo — subir el tono de voz)</summary>
+        <div class="acc-body">
+          <p class="say">"Imagínate que tú y yo nos encontramos tomando un café dentro de 6 meses, y me dices: 'Oye, unirme a First Step Cooperation fue la mejor decisión que pude tomar, cambió completamente mi carrera y mi vida'. ¿Qué tendría que haber pasado en tu vida para que me dijeras eso?"</p>
+          <p>Explorar resultados tangibles profesionales (puesto, organización, día a día, salario, terreno o sede), resultados emocionales (confianza, cómo se sentiría aplicando, qué significaría estar dentro del circuito), impacto en la vida y relación con la carrera. Después, profundizar en emociones ("¿Cómo te sentirías al recibir tu primer contrato?") y confianza ("¿Crees que esto es posible para ti? ¿Por qué sí o por qué no?"). Si duda de sí mismo/a, es el momento de reforzar con casos de éxito de perfiles similares, sin forzar la respuesta.</p>
+          <p><strong>Dinero:</strong> cuánto ha invertido hasta ahora y cuánto le ayudó realmente; si cree que conseguir el primer contrato merece una inversión seria; cuánto estaría dispuesto/a a invertir. Si detecta red flags financieros: <span class="say">"¿El verdadero problema es la falta de recursos económicos, o es no saber cómo priorizar tu inversión en algo que va a cambiar completamente tu carrera?"</span></p>
+        </div>
+      </details>
+      <details class="acc">
+        <summary>7. Transición (obligatorio, no saltárselo)</summary>
+        <div class="acc-body">
+          <p class="say">"Esa era la última pregunta que tenía que hacerte, [Nombre]. Me encaja todo lo que me has dicho y entras perfectamente dentro del perfil de profesionales a los que puedo ayudar. [Nombre], si te parece bien, te presento cómo funciona el Programa First Step Cooperation, ya que por estar en esta llamada tienes una promoción especial. ¿Te parece?"</p>
+        </div>
+      </details>
+      <details class="acc">
+        <summary>8. Pitch — oferta y los 2 pilares (obligatorio, no saltárselo)</summary>
+        <div class="acc-body">
+          <p><strong>Fórmula de la promesa</strong> (adaptar siempre a las palabras literales del prospecto): "Ayudo a [tipo de perfil] a lograr [resultado específico], sin [obstáculo que ya conoce], gracias a [mecanismo único]." Ejemplo: "Lo que vamos a hacer es diseñar contigo un plan concreto para que consigas tu primer contrato con una ONG o agencia internacional —que es lo que me dijiste que buscas— sin tener que hacer otro máster ni seguir aplicando en ReliefWeb esperando respuestas que nunca llegan."</p>
+          <p><strong>Pilar 1 — Alineación Profesional Humanitaria:</strong> resuelve que el lead aplique sin respuesta, no sepa qué rol encaja, y que su CV no hable el idioma del sector. <span class="say">"El primer pilar es Alineación Profesional Humanitaria, que redefine completamente cómo te posicionas. Lo que hacemos aquí es enseñarte a posicionar tu perfil según los criterios reales de contratación del sector humanitario. Tu experiencia, tu formación, tus competencias transferibles tienen valor, pero si no sabes traducirlas al lenguaje del sector, eres invisible."</span> Caso de éxito: María, 32 años, máster en cooperación, 3 años aplicando sin una entrevista; con el CV alineado consiguió su primera entrevista en 5 semanas y hoy trabaja como Programme Officer en Jordania.</p>
+          <p><strong>Pilar 2 — Networking Operativo-Estratégico:</strong> resuelve la sensación de estar solo/a sin contactos y de aplicar solo a portales saturados. <span class="say">"En lugar de aplicar solo a portales donde compites con cientos de candidatos, nuestro modelo se construye sobre el principio de acceso estratégico: saber exactamente a quién contactar, cómo acercarte, y convertir esas conexiones en información privilegiada sobre vacantes que no se publican."</span> Caso de éxito: Carlos, 28 años, no conocía a nadie del sector; en 6 semanas estableció 8 conversaciones con Programme Managers y hoy trabaja como Logistics Assistant en Médicos Sin Fronteras.</p>
+          <p>Tras cada pilar, medir temperatura: <span class="say">"¿Tiene sentido para ti? ¿Le ves lógica?"</span></p>
+        </div>
+      </details>
+      <details class="acc">
+        <summary>9. Fases del programa</summary>
+        <div class="acc-body">
+          <p class="say">"Hasta aquí, todo lo que te he mostrado, ¿crees que es lo que necesitas?" → "Vale, siendo esto lo que necesitas, ¿te parece si te muestro cómo vamos a implementarlo contigo?"</p>
+          <p><strong>Fase 1 — Diagnóstico y alineación estratégica (semanas 1-2):</strong> sesión 1:1 de onboarding (45-60 min), análisis estratégico personalizado y plan de acción de 14 días.</p>
+          <p><strong>Fase 2 — Formación estratégica y preparación (semanas 3-6):</strong> sesiones grupales de cómo aplicar inteligentemente, CV y perfil ONG-ready, networking humanitario con criterio, realidad del terreno, y sesión semanal de dudas.</p>
+          <p><strong>Fase 3 — Preparación para procesos y consolidación (semanas 7-8):</strong> simulación de entrevistas, soporte continuo por Telegram y acceso a la comunidad.</p>
+          <p class="subnote">Nota: la duración total del programa es de 5 meses de acceso real (2 meses de programa formativo + 2 meses de acompañamiento en candidaturas reales + 1 mes de regalo). Al hablar de "resultados tangibles en las primeras semanas", el foco de la conversación es correcto para las primeras 8 semanas (los 2 meses formativos) — pero al cerrar la venta, especificar siempre que el acompañamiento completo dura 5 meses.</p>
+        </div>
+      </details>
+      <details class="acc">
+        <summary>10. Características (entrega y bonus)</summary>
+        <div class="acc-body">
+          <p>Modalidad de entrega: sesión 1:1 personalizada de onboarding; sesiones grupales formativas (Cómo Aplicar Inteligentemente, CV & Perfil ONG Ready, Networking Humanitario con Criterio, Realidad del Terreno, Simulación de Entrevistas); entregables y herramientas (Análisis Estratégico Personalizado, Plan de Acción de 14 días, plantillas de CV y networking); acompañamiento y comunidad (Humanitarian Circle en Telegram, sesión grupal semanal de dudas).</p>
+          <p><strong>Bonus de alto valor:</strong> Humanitarian Circle (valor 300€), sesiones grupales semanales de dudas (valor 350€/sesión), Mapa del Sector Humanitario (valor 300€). Valor total de los bonus: 950€.</p>
+        </div>
+      </details>
+      <details class="acc">
+        <summary>11. Inversión y temperatura</summary>
+        <div class="acc-body">
+          <p class="say">"Cuéntame, [Nombre], ¿crees que con el Programa First Step Cooperation sí vas a lograr conseguir claridad, estrategia y tus primeras entrevistas?" → "Del 1 al 10, siendo 1 'esto no es para mí' y 10 'esto es justamente lo que necesito', ¿dónde te encuentras con este plan?"</p>
+          <p>Si dice menos de 10: <span class="say">"¿Qué hace falta para que sea un 10 para ti?"</span> — escuchar y resolver antes de avanzar. Solo avanzar al precio con temperatura 8 o más. Si dice 10: <span class="say">"¿Qué de este plan crees te va a llevar de [situación actual] a [resultado deseado]?"</span> — para que se venda la idea a sí mismo/a. Cerrar con: <span class="say">"Entonces, lo único que nos faltaría es inscribirte en el Programa First Step Cooperation y empezar a trabajar en tu transición profesional, ¿verdad?"</span></p>
+          <div class="callout"><strong>Tras decir el precio, pausa:</strong> deja espacio para que el cliente reaccione primero, sin rellenar el silencio con justificaciones. Es su turno de responder.</div>
+        </div>
+      </details>
+      <details class="acc">
+        <summary>12. Manejo de objeciones (llamada)</summary>
+        <div class="acc-body">
+          <p>Ver la sección 10 · <a href="#objeciones">Manejo de creencias y objeciones</a> para el detalle completo: incluye las respuestas rápidas y la técnica paso a paso para "me lo tengo que pensar", "es caro", "no tengo dinero", "¿tienes garantía?" y "necesito hablarlo con mi pareja/familia".</p>
+        </div>
+      </details>
+      <details class="acc">
+        <summary>13. Cierre y seguimiento</summary>
+        <div class="acc-body">
+          <p><strong>Cierre exitoso:</strong> bienvenida al programa, explicar qué recibirá en 24-48h (calendario de onboarding, acceso a Telegram, calendario de sesiones grupales, kit de bienvenida, plantillas), y enviar enlace de pago por WhatsApp preguntando la modalidad preferida.</p>
+          <p><strong>Si no cierra:</strong> enviar por email casos de éxito similares, el detalle completo del programa y testimonios; mantener la propuesta especial durante 48 horas (con precio regular más alto después); ofrecer una segunda llamada corta de seguimiento en 48 horas, y fijar día y hora concretos.</p>
+        </div>
+      </details>
+
+      <div class="callout"><strong>Precio y duración corregidos en este guion:</strong> la versión original de este script (y su documento de oferta asociado) citaba 497€ y 2 meses. El comité de revisión ha unificado esa cifra con el resto del informe: <strong>847€ — 4 meses de programa + 1 mes de regalo (5 meses de acceso real)</strong> son el precio y la duración que debe citar el equipo en toda conversación, incluidas las plantillas de "silencio tras el precio" y los planes de pago (usar los planes de la sección Inversión: pago único 847€, o 2/3 plazos vía Stripe, no el 250€+250€ de la versión antigua).</div>
+    </section>
+
+    <section id="objeciones">
+      <div class="section-tag">10 · Objeciones</div>
+      <h2>Manejo de creencias y objeciones</h2>
+      <p>Versión única y completa, con dos niveles: respuestas rápidas para chat o primer contacto, y el manejo profundo paso a paso para usar en la llamada de venta.</p>
+      <h3>Respuestas rápidas (chat / primer contacto)</h3>
+      <details class="acc">
+        <summary>"Es mucho dinero"</summary>
+        <div class="acc-body">
+          <p class="say">"Entiendo. ¿Caro respecto a qué? Si el trabajo que buscas paga 2.800 o 3.000€/mes, un mes de retraso ya supera el coste del programa. La pregunta no es si es caro — es qué te está costando cada mes sin resultados."</p>
+        </div>
+      </details>
+      <details class="acc">
+        <summary>"Puedo conseguirlo gratis con contenido online"</summary>
+        <div class="acc-body">
+          <p class="say">"Sí, el contenido gratuito existe. Y llevas [X meses/años] consumiéndolo. ¿Cómo va funcionando eso? El problema no es la información — es la aplicación personalizada a tu caso concreto."</p>
+        </div>
+      </details>
+      <details class="acc">
+        <summary>"No tengo experiencia en terreno"</summary>
+        <div class="acc-body">
+          <p class="say">"Las organizaciones no solo buscan gente que haya estado en terreno físicamente. Buscan buenos gestores, financieros, logistas, comunicadores. Si has coordinado equipos o proyectos en cualquier sector, tienes competencias transferibles."</p>
+        </div>
+      </details>
+      <details class="acc">
+        <summary>"Necesito pensarlo"</summary>
+        <div class="acc-body">
+          <p class="say">"¿Qué información te falta para decidir ahora mismo?"</p>
+        </div>
+      </details>
+      <details class="acc">
+        <summary>"No es el momento"</summary>
+        <div class="acc-body">
+          <p class="say">"Entiendo que la vida no se detiene. ¿Cuándo sería el momento correcto? ¿Qué tendría que cambiar?"</p>
+        </div>
+      </details>
+      <details class="acc">
+        <summary>"¿Cuál es la probabilidad de conseguir trabajo con el programa?"</summary>
+        <div class="acc-body">
+          <p class="say">"No podemos prometerte un empleo — nadie debería hacerlo, y si alguien te lo promete, desconfía. Lo que sí podemos decirte con total honestidad es esto: la mayoría de personas que llegan a FSC llevan meses o años aplicando a ciegas, sin entender cómo funciona el sector por dentro. El programa cambia eso — después de las 8 semanas del programa formativo sabes exactamente cómo funciona el mercado oculto, cómo presentar tu perfil para pasar los filtros ATS, a quién contactar y cómo hacerlo. Eso no garantiza empleo, pero multiplica exponencialmente tus posibilidades de conseguir entrevistas. Y por ende empleo."</p>
+          <p>La diferencia es la misma que entre conducir con el GPS o sin él: los dos pueden llegar, pero uno llega mucho antes y con mucho menos desgaste. Alguien que termina el programa entiende el sector 100% desde dentro — cómo piensan los reclutadores, qué buscan realmente, cómo se mueve el mercado oculto. Eso no se consigue con años de búsqueda por tu cuenta.</p>
+        </div>
+      </details>
+
+      <h3>Manejo profundo en llamada (técnica paso a paso)</h3>
+      <details class="acc">
+        <summary>"Me lo tengo que pensar" (versión llamada)</summary>
+        <div class="acc-body"><p>"¿Qué información te falta para decidir ahora mismo?" — obliga a concretar la duda real. Si no concreta, presentar las tres dudas típicas (¿es lo que busco?, ¿puede ayudarme?, ¿seré capaz de llevarlo adelante?) y pedir cuál pesa más. Según la respuesta, trabajar certeza en el producto con casos de éxito, o certeza en sí mismo/a conectando con su miedo y deseo ya expresados en la llamada.</p></div>
+      </details>
+      <details class="acc">
+        <summary>"Es caro" (versión llamada)</summary>
+        <div class="acc-body"><p>Nunca justificar el precio comparando valor — es defensivo y poco efectivo. "Entiendo. ¿Caro respecto a qué? Si el trabajo que buscas paga 2.800 o 3.000€/mes, un mes de retraso ya supera el coste del programa. La pregunta no es si es caro — es qué te está costando cada mes sin resultados."</p></div>
+      </details>
+      <details class="acc">
+        <summary>"No tengo dinero"</summary>
+        <div class="acc-body"><p>Aislar el componente dinero preguntando si haría el programa si el dinero no fuera un problema. Si dice que sí, preguntar directamente: "¿Qué necesitarías que pasara para que fuera posible?" — a veces hay soluciones que no ha contemplado. Co-crear opciones de pago dentro de los planes oficiales (pago único 847€, o 2/3 plazos vía Stripe — ver sección Inversión). No improvisar planes de pago fuera de los ya establecidos.</p></div>
+      </details>
+      <details class="acc">
+        <summary>"¿Tienes garantía?"</summary>
+        <div class="acc-body">
+          <p class="say">"Si cumples con el proceso — asistes, aplicas, haces networking — y no consigues entrevistas, te acompañamos un mes adicional sin coste, más allá de los 5 meses ya incluidos. No prometemos empleo, prometemos acompañamiento de calidad y asegurar que jamás tengas dudas respecto a tu perfil y tus candidaturas."</p>
+          <div class="callout"><strong>No improvisar:</strong> nunca usar la palabra "garantizado" o "garantice" en relación con conseguir empleo, entrevistas o resultados. No es devolución de dinero — ver requisitos completos en la sección 11, Garantía de acompañamiento.</div>
+        </div>
+      </details>
+      <details class="acc">
+        <summary>"Necesito hablarlo con mi pareja/familia"</summary>
+        <div class="acc-body"><p>Proponer una llamada corta conjunta de 15-20 minutos, o enviar un resumen con casos de éxito y fijar día y hora concretos de seguimiento.</p></div>
+      </details>
+    </section>
+
+    <section id="limites">
+      <div class="section-tag">11 · Límites</div>
+      <h2>Límites y qué no prometer</h2>
+      <div class="dodont">
+        <div class="box do">
+          <h4>Se puede decir</h4>
+          <ul>
+            <li>El programa acompaña durante 5 meses de acceso real (4 meses de programa + 1 mes de regalo), con feedback experto</li>
+            <li>Hay casos reales verificados con nombre y resultado</li>
+            <li>La conversación por WhatsApp es sin compromiso</li>
+            <li>El precio de lanzamiento subirá en próximas ediciones</li>
+          </ul>
+        </div>
+        <div class="box dont">
+          <h4>Nunca prometer</h4>
+          <ul>
+            <li>Una contratación garantizada o un plazo exacto para conseguirla</li>
+            <li>Un salario o beneficio concreto en una organización específica</li>
+            <li>Resultados idénticos a los casos mostrados como prueba social</li>
+            <li>Que el programa sustituye la experiencia y el criterio propio del candidato</li>
+            <li>Cualquier condición de la garantía o del desistimiento distinta a la que figura en el contrato firmado</li>
+            <li>Más datos personales de los testimonios que el nombre de pila y el logro conseguido, por protección de datos</li>
+          </ul>
+        </div>
+      </div>
+      <h3>Derecho de desistimiento</h3>
+      <p>El cliente tiene 14 días naturales desde la firma del contrato para desistir sin justificación ni penalización. Si el cliente quiere acceso inmediato al programa antes de que pasen esos 14 días, debe aceptarlo expresamente marcando la casilla del formulario de inscripción, lo que implica renunciar al desistimiento en la proporción del servicio ya recibido. Si ya se ha realizado el análisis estratégico inicial, se descuenta esa parte y la parte formativa ya disfrutada.</p>
+      <h3>Garantía de acompañamiento</h3>
+      <p>Si al terminar el programa el cliente no ha definido una estrategia profesional clara ni ha recibido ninguna respuesta a sus candidaturas, First Step Cooperation ofrece un mes adicional de acompañamiento grupal gratuito. Esta garantía no es automática: exige cumplir de forma acumulada todos estos requisitos:</p>
+      <ul class="checklist">
+        <li><span class="box"></span> Mínimo 80% de asistencia a las sesiones grupales semanales</li>
+        <li><span class="box"></span> Mínimo 80% de visualización del contenido formativo en vídeo</li>
+        <li><span class="box"></span> Participación activa en el onboarding, con la información inicial entregada a tiempo</li>
+        <li><span class="box"></span> Haber entregado el CV, la carta de motivación y el perfil de LinkedIn trabajados en el programa</li>
+        <li><span class="box"></span> Haber aplicado a un mínimo de 15 ofertas de empleo acordes al perfil real del cliente, distribuidas a lo largo del programa</li>
+        <li><span class="box"></span> Mínimo 10 contactos de networking documentados, con mensaje personalizado</li>
+      </ul>
+      <p class="subnote">La garantía no incluye reembolso económico, salvo incumplimiento total y exclusivo de First Step Cooperation. La solicitud debe presentarse por escrito dentro de los 15 días naturales tras finalizar el programa, con la documentación acreditativa. No aplica si el cliente ha pedido una pausa durante el programa, ni si ha seguido un enfoque distinto al indicado sin justificación razonable.</p>
+      <div class="callout"><strong>Cómo usarlo en la conversación:</strong> ante la objeción "¿tienes garantía?", el equipo puede responder con seguridad: sí existe una garantía real de un mes adicional gratuito, condicionada a que el cliente haga el trabajo (asistencia, candidaturas, networking). No es una devolución del dinero, es continuar acompañando sin coste extra. Nunca prometer la garantía sin mencionar que depende de cumplir esos requisitos.</div>
+    </section>
+
+    <div class="seal-divider"><span class="line"></span>
+      <svg viewBox="0 0 100 100" fill="none"><polygon points="50,4 90,26 90,74 50,96 10,74 10,26" stroke="#8E763A" stroke-width="4" fill="none"/><path d="M33 50 L45 62 L69 36" stroke="#8E763A" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <span class="line right"></span></div>
+
+    <section id="inversion">
+      <div class="section-tag">12 · Operativa de cierre</div>
+      <h2>Inversión</h2>
+      <div class="paybox">
+        <h3>Programa FSC</h3>
+        <div class="pay-grid">
+          <div class="pay-card">
+            <div class="plan">Precio de lanzamiento</div>
+            <div class="amount">847€</div>
+            <div class="detail">IVA incluido, pago único · cubre 4 meses de programa + 1 mes de regalo</div>
+          </div>
+          <div class="pay-card">
+            <div class="plan">Valor real combinado</div>
+            <div class="amount">+3.650€</div>
+            <div class="detail">Si se contratasen los servicios por separado</div>
+          </div>
+          <div class="pay-card">
+            <div class="plan">Próximas ediciones</div>
+            <div class="amount">1.200€ a 2.000€</div>
+            <div class="detail">El precio subirá de forma natural</div>
+          </div>
+        </div>
+      </div>
+      <h3>Planes de pago disponibles vía Stripe</h3>
+      <table>
+        <thead><tr><th>Plan</th><th>Importe</th><th>Enlace de pago</th></tr></thead>
+        <tbody>
+          <tr><td class="label">Reserva de plaza</td><td>100€</td><td><a href="https://buy.stripe.com/bJeeVd9BxgKTaF48La9Ve03" target="_blank" rel="noopener">Enlace de reserva</a></td></tr>
+          <tr><td class="label">Pago único</td><td>847€</td><td><a href="https://buy.stripe.com/4gMaEXbJF8en28y4uU9Ve00" target="_blank" rel="noopener">Enlace de pago único</a></td></tr>
+          <tr><td class="label">Pago en 2 plazos</td><td>424€ cada uno</td><td><a href="https://buy.stripe.com/14A00j295amv28ybXm9Ve01" target="_blank" rel="noopener">Enlace de 2 plazos</a></td></tr>
+          <tr><td class="label">Pago en 3 plazos</td><td>283€ cada uno</td><td><a href="https://buy.stripe.com/00w14n3d99ir4gG4uU9Ve04" target="_blank" rel="noopener">Enlace de 3 plazos</a></td></tr>
+        </tbody>
+      </table>
+      <div class="callout"><strong>Importante — enlace preferente:</strong> el enlace de "Pago único" (847€) va a través de Klarna. Dentro de su propio checkout, el lead puede elegir entre pagar al contado o en 3 cuotas sin intereses de 282,33€ cada una. Es el enlace recomendado por defecto, ya que cubre ambas opciones sin necesidad de generar un enlace distinto.</div>
+      <h3>Otros métodos de pago</h3>
+      <table>
+        <thead><tr><th>Método</th><th>Detalle</th></tr></thead>
+        <tbody>
+          <tr><td class="label">Hotmart</td><td>De 1 a 12 cuotas — <a href="https://pay.hotmart.com/W106900732E?bid=1785180079964" target="_blank" rel="noopener">enlace de pago Hotmart</a></td></tr>
+          <tr><td class="label">Bizum</td><td>625 78 49 41</td></tr>
+          <tr><td class="label">PayPal</td><td>info@firststepcooperation.com</td></tr>
+          <tr><td class="label">Transferencia</td><td>Titular: Ana Isabel Martín Martínez · IBAN: ES80 2100 4837 6622 0021 8550 · BIC/SWIFT: CAIXESBBXXX (La Caixa)</td></tr>
+        </tbody>
+      </table>
+      <div class="callout"><strong>Avisar del pago realizado:</strong> en cuanto el lead pague y envíe su comprobante, avisar a Ana Martín por WhatsApp (+34 604 84 47 37) con: el comprobante de pago, nombre y apellidos completos, si tiene algún pago pendiente, y el plan elegido.</div>
+      <div class="callout"><strong>Uso recomendado:</strong> los enlaces de Stripe y Hotmart son la vía preferente para el cierre digital; Bizum, PayPal y transferencia quedan como alternativas directas para quien lo prefiera, sobre todo en la reserva de plaza o pagos puntuales.</div>
+    </section>
+
+    <section id="proceso-closer">
+      <div class="section-tag">13 · Proceso de Closer</div>
+      <h2>Procedimiento del Closer</h2>
+      <div class="phase">
+        <div class="num active">1</div>
+        <div class="phase-body"><h4>Responder rápido y de forma personal</h4><p>Las plazas se presentan como limitadas porque se responde personalmente a cada mensaje. Mantener esa coherencia.</p></div>
+      </div>
+      <div class="phase">
+        <div class="num active">2</div>
+        <div class="phase-body"><h4>Confirmar que vio el webinar y la guía</h4><p>Preguntar en qué punto se quedó, para no repetir información ya vista.</p></div>
+      </div>
+      <div class="phase">
+        <div class="num active">3</div>
+        <div class="phase-body"><h4>Diagnosticar antes de presentar el programa</h4><p>Entender su situación real (tiempo aplicando, entrevistas conseguidas) antes de hablar del Programa FSC.</p></div>
+      </div>
+      <div class="phase">
+        <div class="num active">4</div>
+        <div class="phase-body"><h4>Filtrar el perfil</h4><p>Confirmar compromiso real con la transición, no solo curiosidad. El programa no es para quien busca una solución mágica.</p></div>
+      </div>
+      <div class="phase">
+        <div class="num active">5</div>
+        <div class="phase-body"><h4>Cerrar con una llamada o el siguiente paso concreto</h4><p>Nunca dejar la conversación abierta sin una acción siguiente definida.</p></div>
+      </div>
+
+      <h3>Antes de terminar cada conversación</h3>
+      <ul class="checklist">
+        <li><span class="box"></span> Me presenté como First Step Cooperation</li>
+        <li><span class="box"></span> Envié el vídeo de preparación de la llamada justo después de agendar (nunca antes)</li>
+        <li><span class="box"></span> Confirmé que había visto el webinar y descargado la guía</li>
+        <li><span class="box"></span> Diagnostiqué su situación antes de hablar del programa</li>
+        <li><span class="box"></span> No prometí una contratación garantizada</li>
+        <li><span class="box"></span> Cerré con un siguiente paso concreto</li>
+      </ul>
+    </section>
+
+    <div class="seal-divider"><span class="line"></span>
+      <svg viewBox="0 0 100 100" fill="none"><polygon points="50,4 90,26 90,74 50,96 10,74 10,26" stroke="#8E763A" stroke-width="4" fill="none"/><path d="M33 50 L45 62 L69 36" stroke="#8E763A" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <span class="line right"></span></div>
+
+    <section id="equipo-horarios">
+      <div class="section-tag">14 · Equipo</div>
+      <h2>Equipo y horario de cobertura</h2>
+      <p>La cuenta de First Step Cooperation la cubren 4 personas con funciones combinadas de setter y closer, repartidas en turno de mañana y turno de tarde.</p>
+      <div class="callout"><strong>Atención, nombre duplicado:</strong> una de las Closers se llama Ana, igual que Ana Martín, cofundadora del programa. En este informe se la identifica siempre como "Ana (Closer)" para evitar confusión. En comunicación interna del equipo, conviene diferenciarlas de forma explícita.</div>
+      <table>
+        <thead><tr><th>Turno</th><th>Persona</th><th>Rol</th><th>Horario</th><th>Horas/día</th></tr></thead>
+        <tbody>
+          <tr><td class="label">Mañana</td><td>Patri</td><td>Setter-Closer</td><td>09:00 – 14:00</td><td>5h</td></tr>
+          <tr><td class="label">Mañana</td><td>Ana (Closer)</td><td>Setter-Closer</td><td>10:00 – 15:00</td><td>5h</td></tr>
+          <tr><td class="label">Tarde</td><td>Charo</td><td>Setter-Closer</td><td>15:00 – 20:30</td><td>5h 30min</td></tr>
+          <tr><td class="label">Tarde</td><td>Kira</td><td>Setter-Closer</td><td>15:30 – 21:00</td><td>5h 30min</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Cobertura horaria diaria</h3>
+      <p class="subnote">Personas activas por franja horaria, de 09:00 a 21:00 (12 horas de cobertura continua, sin huecos).</p>
+      <table>
+        <thead><tr><th>Franja</th><th>Personas activas</th><th>Nº cubriendo</th></tr></thead>
+        <tbody>
+          <tr><td class="label">09:00 – 10:00</td><td>Patri</td><td>1</td></tr>
+          <tr><td class="label">10:00 – 14:00</td><td>Patri, Ana (Closer)</td><td>2</td></tr>
+          <tr><td class="label">14:00 – 15:00</td><td>Ana (Closer)</td><td>1</td></tr>
+          <tr><td class="label">15:00 – 15:30</td><td>Charo</td><td>1</td></tr>
+          <tr><td class="label">15:30 – 20:30</td><td>Charo, Kira</td><td>2</td></tr>
+          <tr><td class="label">20:30 – 21:00</td><td>Kira</td><td>1</td></tr>
+        </tbody>
+      </table>
+      <div class="callout"><strong>Resumen:</strong> 12 horas de cobertura diaria continua (09:00 a 21:00), con doble cobertura en las franjas 10:00-14:00 y 15:30-20:30. Total combinado: 21 horas-persona al día entre las 4 personas del equipo.</div>
+    </section>
+
+    <section id="reparto-leads">
+      <div class="section-tag">14b · Operativa de equipo</div>
+      <h2>Reparto y seguimiento de leads</h2>
+      <p>Con 4 personas cubriendo el mismo canal, incluidas dos franjas de doble cobertura, hacen falta reglas fijas para que ningún lead se quede sin dueño ni reciba contacto duplicado. Todo esto se apoya en el CRM del equipo; los pasos concretos de configuración dependen de la plataforma exacta.</p>
+
+      <h3>1. Regla de asignación única y automática</h3>
+      <p>El lead se asigna a quien esté de turno en el momento exacto en que entra, según la hora de entrada, no a quien lo contacte primero. En las franjas de doble cobertura, se reparte por un criterio objetivo y automático, como alternar entre las dos personas activas según el orden de llegada del lead. La mayoría de CRM permiten configurar esto como una regla de asignación rotativa (round robin), restringida a las personas que están de turno en cada franja horaria.</p>
+
+      <h3>2. Un propietario visible por lead</h3>
+      <p>Cada lead debe mostrar en el CRM, de forma visible para las 4 personas, quién es su propietario. Nadie contacta un lead que ya tiene dueño asignado, salvo traspaso explícito.</p>
+
+      <h3>3. Protocolo de traspaso en cambio de turno</h3>
+      <p>Un lead que entra en la última media hora de un turno y no ha recibido contacto en las 2 horas previas al cambio, se traspasa automáticamente a la persona entrante. Esto se puede automatizar como una regla del CRM basada en tiempo sin actividad registrada más el horario de turno, o revisarse manualmente por checklist al inicio y al final de cada turno mientras no esté automatizado.</p>
+
+      <h3>4. Alerta de lead huérfano</h3>
+      <p>Cualquier lead sin ningún contacto registrado en 24 horas debe generar un aviso automático (o, si el CRM no lo permite, una revisión manual diaria) para que alguien lo retome, en vez de perderse en silencio.</p>
+
+      <h3>Checklist de cambio de turno</h3>
+      <ul class="checklist">
+        <li><span class="box"></span> Revisar los leads sin contacto en las últimas 2 horas antes de terminar el turno</li>
+        <li><span class="box"></span> Traspasar explícitamente esos leads a la persona entrante, no dejarlos "flotando"</li>
+        <li><span class="box"></span> Confirmar que cada lead activo tiene un propietario visible en el CRM</li>
+        <li><span class="box"></span> Revisar si hay leads huérfanos (más de 24 horas sin contacto) antes de empezar el turno</li>
+      </ul>
+      <div class="callout"><strong>Pendiente de definir con el cliente:</strong> qué CRM usa exactamente el equipo. Con ese dato se pueden dar los pasos de configuración concretos (reglas de asignación rotativa, automatizaciones de traspaso y alertas de inactividad) en vez de la descripción general de este apartado.</div>
+    </section>
+
+    <div class="seal-divider"><span class="line"></span>
+      <svg viewBox="0 0 100 100" fill="none"><polygon points="50,4 90,26 90,74 50,96 10,74 10,26" stroke="#8E763A" stroke-width="4" fill="none"/><path d="M33 50 L45 62 L69 36" stroke="#8E763A" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <span class="line right"></span></div>
+
+    <section id="recursos">
+      <div class="section-tag">15 · Recursos</div>
+      <h2>Recursos y enlaces de referencia</h2>
+      <p>Material para compartir con quien ya ha agendado llamada, y referencias internas del equipo de closers.</p>
+      <table>
+        <thead><tr><th>Recurso</th><th>Enlace</th></tr></thead>
+        <tbody>
+          <tr><td class="label">Canal de YouTube (testimonios)</td><td><a href="https://www.youtube.com/@FirstStepCooperation" target="_blank" rel="noopener">@FirstStepCooperation</a></td></tr>
+          <tr><td class="label">Instagram del programa</td><td><a href="https://www.instagram.com/firststep.cooperation/" target="_blank" rel="noopener">@firststep.cooperation</a> — en destacados están los éxitos más recientes de alumnos, incluso antes de terminar el programa</td></tr>
+          <tr><td class="label">LinkedIn de Ana Martín</td><td><a href="https://www.linkedin.com/in/ana-martín-ab8101322/" target="_blank" rel="noopener">Perfil de Ana Martín</a></td></tr>
+          <tr><td class="label">LinkedIn de Michael Sainvil</td><td><a href="https://www.linkedin.com/in/sainvil-michael-87b1793b9/" target="_blank" rel="noopener">Perfil de Michael Sainvil</a></td></tr>
+          <tr><td class="label">Vídeo de preparación de la llamada</td><td><a href="https://assets.cdn.filesafe.space/ehcjbHdq0skqQPG7lv6I/media/697b0b78c9e16645b062de85.mp4" target="_blank" rel="noopener">Vídeo previo a la cita</a> — se envía siempre justo después de agendar (ver <a href="#prellamada-setter">Guion de prellamada</a>), nunca antes</td></tr>
+        </tbody>
+      </table>
+      <div class="callout"><strong>Uso con el candidato:</strong> antes de la llamada agendada se le puede compartir el Instagram, los LinkedIn de los fundadores y el vídeo de preparación, para que llegue con contexto y confianza.</div>
+
+      <h3>Grabaciones de llamadas que terminaron en venta (Fathom)</h3>
+      <p class="subnote">Uso interno del equipo de closers, como referencia de tono, ritmo y manejo de objeciones en llamadas reales que sí cerraron.</p>
+      <div class="callout"><strong>Uso estrictamente interno:</strong> estas 13 grabaciones son llamadas reales y propias de First Step Cooperation. Bajo ningún concepto pueden salir del equipo de trabajo ni compartirse con candidatos, terceros o fuera del ámbito privado del equipo de closers.</div>
+      <table>
+        <thead><tr><th>#</th><th>Grabación</th></tr></thead>
+        <tbody>
+          <tr><td class="label">1</td><td><a href="https://fathom.video/share/oz6SwBxmyesthLYqwpumF36Z2rRvL8rm" target="_blank" rel="noopener">Ver grabación</a></td></tr>
+          <tr><td class="label">2</td><td><a href="https://fathom.video/share/znYnzDNKeuuNfBzLieMASfBBtijEfspY" target="_blank" rel="noopener">Ver grabación</a></td></tr>
+          <tr><td class="label">3</td><td><a href="https://fathom.video/share/JnVsDdNxfpxFo4c-GQCWQCx69YYkktdc" target="_blank" rel="noopener">Ver grabación</a></td></tr>
+          <tr><td class="label">4</td><td><a href="https://fathom.video/share/y8YJsje9b-kezh8XE32xb7Hz8Xec5xvD" target="_blank" rel="noopener">Ver grabación</a></td></tr>
+          <tr><td class="label">5</td><td><a href="https://fathom.video/share/ehsTBWbKV-ZwLb1Y-heiS3LqLsFy_yhz" target="_blank" rel="noopener">Ver grabación</a></td></tr>
+          <tr><td class="label">6</td><td><a href="https://fathom.video/share/Rh23PPcLi4jyBsQ1xSkxYqXX7kxQnYTy" target="_blank" rel="noopener">Ver grabación</a></td></tr>
+          <tr><td class="label">7</td><td><a href="https://fathom.video/share/yRxUgskzJsBxhbyhZsNtV--GkgiFND8W" target="_blank" rel="noopener">Ver grabación</a></td></tr>
+          <tr><td class="label">8</td><td><a href="https://fathom.video/share/yBDU8xs1y1EdvSxhaZmKKkpyYizm48RW" target="_blank" rel="noopener">Ver grabación</a></td></tr>
+          <tr><td class="label">9</td><td><a href="https://fathom.video/share/qje_thCPxB7dBR4yvb1RjcyPuxCzn1in" target="_blank" rel="noopener">Ver grabación</a></td></tr>
+          <tr><td class="label">10</td><td><a href="https://fathom.video/share/nahixGGpfpPjuEo-k2Qth58uooLS3ihR" target="_blank" rel="noopener">Ver grabación</a></td></tr>
+          <tr><td class="label">11</td><td><a href="https://fathom.video/share/t9ABDuxMEb-DWLXApZ2Y7tBALEcdaY5d" target="_blank" rel="noopener">Ver grabación</a></td></tr>
+          <tr><td class="label">12</td><td><a href="https://fathom.video/share/5Wu6HdxCquz_ewnCXnKHoCtMsg-xZ156" target="_blank" rel="noopener">Ver grabación</a></td></tr>
+          <tr><td class="label">13</td><td><a href="https://fathom.video/share/NE19aSBYC4siiDUW8j1ntSLb_mmr7LDW" target="_blank" rel="noopener">Ver grabación</a></td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <footer>
+      <svg viewBox="0 0 100 100" fill="none"><polygon points="50,4 90,26 90,74 50,96 10,74 10,26" stroke="#8E763A" stroke-width="5" fill="none"/><path d="M33 50 L45 62 L69 36" stroke="#8E763A" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Closer Search — Informe interno de referencia sobre First Step Cooperation.
+    </footer>
+  </main>
+</div>
+</body>
+</html>
